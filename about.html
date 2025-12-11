@@ -1,21 +1,159 @@
-<section class="container my-5">
-    <h1>Contact Us</h1>
-    <div class="row">
-        <div class="col-md-6">
-            <form action="https://formspree.io/f/YOUR_ID" method="POST">
-                <input type="text" name="name" placeholder="Name" class="form-control mb-2" required>
-                <input type="tel" name="phone" placeholder="Phone" class="form-control mb-2" required>
-                <input type="email" name="email" placeholder="Email" class="form-control mb-2" required>
-                <select name="service" class="form-control mb-2">
-                    <option>Compost Delivery</option><option>Lawn Leveling</option><!-- etc. -->
-                </select>
-                <textarea name="message" placeholder="Message" class="form-control mb-2"></textarea>
-                <button type="submit" class="btn btn-success">Send</button>
-            </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Organic Compost & Lawn Services | San Antonio, North Spring Branch</title>
+    <meta name="description" content="Local family-owned organic lawn care business serving San Antonio and North Spring Branch. Professional, affordable, eco-friendly compost and lawn services.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: Arial, sans-serif; color: #333; }
+        .page-header {
+            background: url('images/banner.png') center/cover no-repeat;
+            height: 40vh;
+            min-height: 300px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .btn-call {
+            background: #28a745;
+            border: none;
+            font-size: 1.3rem;
+            padding: 12px 30px;
+        }
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-size: 1.2rem;
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .about-img {
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .page-header { height: 50vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar con logo -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Organic Compost SA Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="tel:+1-210-XXX-XXXX" class="btn btn-success ms-3">Call Now</a>
+            </div>
         </div>
-        <div class="col-md-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3470.123!2d-98.567!3d29.512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c5fxx%3A0x... (busca embed para North Spring Branch)" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            <p>Serving San Antonio & North Spring Branch. Call: (210) XXX-XXXX</p>
+    </nav>
+
+    <!-- Header de página con banner.png -->
+    <header class="page-header">
+        <div class="container">
+            <h1>About Us</h1>
+            <p class="lead">Your Trusted Local Organic Lawn Care Experts in San Antonio</p>
         </div>
-    </div>
-</section>
+    </header>
+
+    <!-- Sección principal About -->
+    <section class="container my-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <h2>Family-Owned & Locally Operated</h2>
+                <p class="lead">
+                    We are a proud San Antonio family business dedicated to providing high-quality, organic lawn care services 
+                    to homeowners in North Spring Branch and surrounding neighborhoods.
+                </p>
+                <p>
+                    With years of experience working in the tough Texas climate, we understand the unique challenges of maintaining 
+                    a healthy, green lawn here. That's why we focus exclusively on 100% organic solutions — no harsh chemicals, 
+                    just natural compost, fertilization, and proven techniques that deliver lasting results.
+                </p>
+                <p>
+                    Our mission is simple: help you achieve a beautiful, sustainable lawn at the most affordable prices possible, 
+                    while delivering professional service you can trust.
+                </p>
+                <ul class="list-unstyled mt-4">
+                    <li class="mb-2">✔ Locally owned and operated in San Antonio</li>
+                    <li class="mb-2">✔ Years of hands-on experience in Texas soils</li>
+                    <li class="mb-2">✔ Committed to eco-friendly, organic practices</li>
+                    <li class="mb-2">✔ Direct communication — you always talk to the owner</li>
+                    <li class="mb-2">✔ Satisfaction guaranteed on every job</li>
+                </ul>
+                <a href="tel:+1-210-XXX-XXXX" class="btn btn-success btn-lg mt-3">
+                    Call (210) XXX-XXXX to Speak Directly with Us
+                </a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="images/about-team.jpg" class="img-fluid about-img shadow" alt="Our team providing organic lawn care in San Antonio">
+            </div>
+        </div>
+
+        <!-- Before & After Gallery -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h2 class="text-center mb-4">See the Difference Organic Care Makes</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img src="images/before.jpg" class="card-img-top" alt="Lawn before organic treatment">
+                            <div class="card-body text-center">
+                                <h5>Before</h5>
+                                <p>Thin, patchy grass with poor soil</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img src="images/after.jpg" class="card-img-top" alt="Lawn after organic compost and fertilization">
+                            <div class="card-body text-center">
+                                <h5>After</h5>
+                                <p>Thick, green, healthy lawn all year round</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <h3>Ready to transform your lawn the organic way?</h3>
+            <a href="tel:+1-210-XXX-XXXX" class="btn btn-call btn-lg">
+                Call Now: (210) XXX-XXXX – Direct Line, Fast Response
+            </a>
+        </div>
+    </section>
+
+    <!-- Botón flotante de llamada (visible solo en móvil) -->
+    <a href="tel:+1-210-XXX-XXXX" class="btn btn-success floating-btn d-lg-none">
+        Call Now
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
