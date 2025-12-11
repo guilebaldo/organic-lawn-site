@@ -1,53 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Mismo head que index.html -->
-    <title>Services | Organic Compost SA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Organic Compost & Lawn Services | San Antonio, North Spring Branch</title>
+    <meta name="description" content="Organic compost delivery, lawn leveling, year-round organic fertilization, and core aeration in San Antonio, TX. Affordable, professional, 100% organic services.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: Arial, sans-serif; color: #333; }
+        .page-header {
+            background: url('images/banner.png') center/cover no-repeat;
+            height: 40vh;
+            min-height: 300px;
+            color: white;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .navbar-brand img {
+            height: 50px;
+        }
+        .btn-call {
+            background: #28a745;
+Kafka            border: none;
+            font-size: 1.3rem;
+            padding: 12px 30px;
+        }
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-size: 1.2rem;
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .service-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        @media (max-width: 768px) {
+            .page-header { height: 50vh; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Mismo nav que index.html -->
+
+    <!-- Navbar con logo -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Organic Compost SA Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonials.html">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="tel:+1-210-234-3062" class="btn btn-success ms-3">Call Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header de página con banner.png -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Our Professional Organic Lawn Services</h1>
+            <p class="lead">Serving San Antonio & North Spring Branch with affordable, eco-friendly solutions</p>
+        </div>
+    </header>
+
+    <!-- Sección de servicios -->
     <section class="container my-5">
-        <h1 class="text-center mb-4">Our Services</h1>
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card h-100">
-                    <img src="images/compost.jpg" class="card-img-top" alt="Organic Compost Delivery">
-                    <div class="card-body">
-                        <h5>Organic Compost Delivery & Topdressing</h5>
-                        <p>Premium compost for San Antonio soils. Improves drainage & nutrients naturally. From $XX/yard.</p>
+        <div class="row g-4">
+            <!-- Servicio 1: Compost Delivery & Topdressing -->
+            <div class="col-lg-6">
+                <div class="card service-card h-100 shadow-sm">
+                    <img src="images/compost.jpg" class="card-img-top" alt="Organic Compost Delivery & Topdressing">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">Organic Compost Delivery & Topdressing</h3>
+                        <p class="card-text flex-grow-1">
+                            Premium, locally-sourced organic compost delivered and spread professionally. 
+                            Improves soil structure, water retention, and nutrient levels naturally — perfect for San Antonio's tough clay soils.
+                        </p>
+                        <ul class="list-unstyled mt-3">
+                            <li>✔ High-quality screened compost</li>
+                            <li>✔ Even topdressing application</li>
+                            <li>✔ Great for new lawns or revitalizing old ones</li>
+                        </ul>
+                        <a href="tel:+1-210-234-3062" class="btn btn-success mt-auto">Call for Pricing</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 mb-4">
-                <div class="card h-100">
-                    <img src="images/leveling.jpg" class="card-img-top" alt="Lawn Leveling">
-                    <div class="card-body">
-                        <h5>Lawn Leveling / Yard Grading</h5>
-                        <p>Even out your yard for perfect play areas. Professional tools, no mess.</p>
+
+            <!-- Servicio 2: Lawn Leveling -->
+            <div class="col-lg-6">
+                <div class="card service-card h-100 shadow-sm">
+                    <img src="images/leveling.jpg" class="card-img-top" alt="Lawn Leveling / Yard Grading">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">Lawn Leveling / Yard Grading</h3>
+                        <p class="card-text flex-grow-1">
+                            Eliminate bumps, low spots, and uneven areas for a smooth, professional-looking lawn. 
+                            Ideal for play areas, drainage improvement, or preparing for new sod.
+                        </p>
+                        <ul class="list-unstyled mt-3">
+                            <li>✔ Professional grading equipment</li>
+                            <li>✔ Topsoil & compost mix included</li>
+                            <li>✔ Clean, minimal mess process</li>
+                        </ul>
+                        <a href="tel:+1-210-234-3062" class="btn btn-success mt-auto">Get a Free Quote</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 mb-4">
-                <div class="card h-100">
-                    <img src="images/fertilizer.jpg" class="card-img-top" alt="Organic Fertilization">
-                    <div class="card-body">
-                        <h5>Year-Round Organic Lawn Fertilization</h5>
-                        <p>Keep your grass green all seasons without chemicals. Sustainable & effective.</p>
+
+            <!-- Servicio 3: Year-Round Organic Fertilization -->
+            <div class="col-lg-6">
+                <div class="card service-card h-100 shadow-sm">
+                    <img src="images/fertilizer.jpg" class="card-img-top" alt="Year-Round Organic Fertilization">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">Year-Round Organic Lawn Fertilization</h3>
+                        <p class="card-text flex-grow-1">
+                            Keep your lawn thick, green, and healthy all year with our custom organic fertilizer program. 
+                            No harsh chemicals — safe for kids, pets, and the environment.
+                        </p>
+                        <ul class="list-unstyled mt-3">
+                            <li>✔ Seasonal applications tailored to Texas climate</li>
+                            <li>✔ Slow-release natural nutrients</li>
+                            <li>✔ Promotes deep roots & drought resistance</li>
+                        </ul>
+                        <a href="tel:+1-210-234-3062" class="btn btn-success mt-auto">Schedule Service</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 mb-4">
-                <div class="card h-100">
+
+            <!-- Servicio 4: Core Aeration -->
+            <div class="col-lg-6">
+                <div class="card service-card h-100 shadow-sm">
                     <img src="images/aeration.jpg" class="card-img-top" alt="Core Aeration">
-                    <div class="card-body">
-                        <h5>Core Aeration</h5>
-                        <p>Relieve soil compaction for better root growth. Quick & affordable.</p>
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title">Core Aeration</h3>
+                        <p class="card-text flex-grow-1">
+                            Relieve soil compaction and thatch buildup so water, air, and nutrients reach the roots. 
+                            Essential for a healthier, stronger lawn in San Antonio's heavy soils.
+                        </p>
+                        <ul class="list-unstyled mt-3">
+                            <li>✔ Professional core aerator machines</li>
+                            <li>✔ Best done in spring or fall</li>
+                            <li>✔ Combines perfectly with compost topdressing</li>
+                        </ul>
+                        <a href="tel:+1-210-234-3062" class="btn btn-success mt-auto">Book Aeration</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="text-center"><a href="contact.html" class="btn btn-success btn-lg">Get a Quote</a></div>
+
+        <div class="text-center mt-5">
+            <h3>Ready for a healthier, greener lawn?</h3>
+            <a href="tel:+1-210-234-3062" class="btn btn-call btn-lg">
+                Call (210) XXX-XXXX Now – Direct Line, No Waiting
+            </a>
+        </div>
     </section>
-    <!-- Mismo floating btn y script -->
+
+    <!-- Botón flotante de llamada (visible solo en móvil) -->
+    <a href="tel:+1-210-234-3062" class="btn btn-success floating-btn d-lg-none">
+        Call Now
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
