@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organic Compost & Lawn Services | San Antonio, North Spring Branch</title>
-    <meta name="description" content="Affordable organic compost delivery, lawn leveling, year-round fertilization and aeration in San Antonio, TX. Professional service, call now!">
+    <meta name="description" content="Affordable organic compost, lawn leveling, aeration and fertilization in San Antonio. Professional service - Call (726) 234-3062">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <style>
-        body { font-family: Arial, sans-serif; color: #333; }
+        body { 
+            font-family: Arial, sans-serif; 
+            color: #333; 
+        }
         
         .hero {
             position: relative;
             height: 80vh;
-            min-height: 600px;
+            min-height: 580px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -21,17 +26,15 @@
             color: white;
         }
         
-        .hero video {
+        .hero-video {
             position: absolute;
             top: 50%;
             left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
+            width: 100%;
+            height: 100%;
             transform: translate(-50%, -50%);
+            z-index: -2;
             object-fit: cover;
-            z-index: -1;
         }
         
         .hero-overlay {
@@ -40,12 +43,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.45);
-            z-index: 1;
+            background: rgba(0, 0, 0, 0.50);
+            z-index: -1;
         }
         
         .navbar-brand img {
-            height: 50px;
+            height: 52px;
         }
         
         .btn-call {
@@ -53,6 +56,7 @@
             border: none;
             font-size: 1.35rem;
             padding: 14px 32px;
+            font-weight: 600;
         }
         
         .floating-btn {
@@ -61,20 +65,25 @@
             right: 20px;
             z-index: 1000;
             font-size: 1.2rem;
-            padding: 15px 20px;
+            padding: 15px 25px;
             border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
-        
+
         @media (max-width: 768px) {
-            .hero { height: 70vh; min-height: 500px; }
-            .hero h1 { font-size: 2.2rem; }
+            .hero { 
+                height: 70vh; 
+                min-height: 480px; 
+            }
+            .hero h1 { 
+                font-size: 2.1rem; 
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar con logo -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -92,19 +101,22 @@
                     <li class="nav-item"><a class="nav-link" href="videos.html">Video Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <a href="tel:+1-210-XXX-XXXX" class="btn btn-success ms-3">Call Now</a>
+                <a href="tel:+17262343062" class="btn btn-success ms-3">Call Now</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero con Video Widescreen -->
+    <!-- Hero Section with YouTube Video -->
     <section class="hero">
-        <video autoplay muted loop playsinline>
-            <source src="images/hero-video.mp4" type="video/mp4">
-            <!-- Si tienes versión WebM para mejor compatibilidad -->
-            <!-- <source src="images/hero-video.webm" type="video/webm"> -->
-            Tu navegador no soporta video.
-        </video>
+        <iframe 
+            class="hero-video" 
+            src="https://www.youtube.com/embed/O8g8MHvLkFQ?autoplay=1&mute=1&loop=1&playlist=O8g8MHvLkFQ&controls=0&modestbranding=1&rel=0" 
+            title="Drone Timelapse - Organic Lawn Care San Antonio" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
         
         <div class="hero-overlay"></div>
         
@@ -113,16 +125,16 @@
             <h2 class="lead fs-3 mb-4">San Antonio • North Spring Branch</h2>
             <p class="lead mb-4">Professional • Affordable • 100% Organic</p>
             
-            <a href="tel:+1-210-XXX-XXXX" class="btn btn-call btn-lg">
-                Call Now: (210) XXX-XXXX
+            <a href="tel:+17262343062" class="btn btn-call btn-lg">
+                Call (726) 234-3062
             </a>
         </div>
     </section>
 
-    <!-- Beneficios -->
-    <section class="container my-5">
-        <div class="row text-center">
-            <div class="col-md-3 mb-4">
+    <!-- Benefits Section -->
+    <section class="container my-5 py-4">
+        <div class="row text-center g-4">
+            <div class="col-md-3">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5>Affordable Prices</h5>
@@ -130,15 +142,15 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mb-4">
+            <div class="col-md-3">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
-                        <h5>Professional Work</h5>
-                        <p>Reliable & experienced team</p>
+                        <h5>Professional Service</h5>
+                        <p>Reliable & experienced</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mb-4">
+            <div class="col-md-3">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5>100% Organic</h5>
@@ -146,119 +158,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5>Year-Round Green</h5>
-                        <p>Results that last</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Botón flotante -->
-    <a href="tel:+1-210-XXX-XXXX" class="btn btn-success floating-btn d-lg-none">
-        Call Now
-    </a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>                    <li class="nav-item"><a class="nav-link" href="videos.html">Video Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-                <a href="tel:+1-726-234-3062" class="btn btn-success ms-3">Call Now</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero con banner.png -->
-    <section class="hero">
-        <div class="container">
-            <h1>Top-Rated Organic Compost & Lawn Care in San Antonio – North Spring Branch</h1>
-            <p class="lead">Affordable prices • Professional work • 100% organic • Year-round green lawns</p>
-            <a href="tel:+1-726-234-3062" class="btn btn-call btn-lg mt-3">
-                Call Now: +1 (726) 234-3062 for a Free Quote
-            </a>
-        </div>
-    </section>
-
-    <!-- Beneficios -->
-    <section class="container my-5">
-        <div class="row text-center">
-            <div class="col-md-3 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5>Affordable Prices</h5>
-                        <p>Best rates in San Antonio</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5>Professional Work</h5>
-                        <p>Reliable, certified team</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5>100% Organic</h5>
-                        <p>Safe for family & pets</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 mb-4">
+            <div class="col-md-3">
                 <div class="card h-100 shadow-sm">
                     <div class="card-body">
                         <h5>Year-Round Results</h5>
-                        <p>Green lawn all seasons</p>
+                        <p>Green lawns all season</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonios -->
-    <section class="container my-5">
-        <h2 class="text-center mb-5">What Our Customers Say</h2>
-        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <blockquote class="blockquote text-center px-4">
-                        <p>"Best compost service in North Spring Branch! My lawn has never looked better all year."</p>
-                        <footer class="blockquote-footer">John D. <cite>– 5 stars</cite></footer>
-                    </blockquote>
-                </div>
-                <div class="carousel-item">
-                    <blockquote class="blockquote text-center px-4">
-                        <p>"Professional aeration and leveling. Great price and excellent results."</p>
-                        <footer class="blockquote-footer">Sarah K. <cite>– 5 stars</cite></footer>
-                    </blockquote>
-                </div>
-                <div class="carousel-item">
-                    <blockquote class="blockquote text-center px-4">
-                        <p>"Their organic fertilization keeps my yard green even in Texas heat. Highly recommend!"</p>
-                        <footer class="blockquote-footer">Mike R. <cite>– 5 stars</cite></footer>
-                    </blockquote>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section>
-
-    <!-- Botón flotante de llamada (solo visible en móvil) -->
-    <a href="tel:+1-726-234-3062" class="btn btn-success floating-btn d-lg-none">
-        Call Now
+    <!-- Floating Call Button (Mobile only) -->
+    <a href="tel:+17262343062" class="btn btn-success floating-btn d-lg-none">
+        Call (726) 234-3062
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
