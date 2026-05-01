@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tsunami | The Awakening</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <audio id="phoneRing" loop>
+        <source src="https://www.tones7.com/media/old_telephone.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="modemConnect">
+        <source src="https://www.myinstants.com/media/sounds/dial_up.mp3" type="audio/mpeg">
+    </audio>
+    <style>
+        :root {
+            --matrix-green: #00ff41;
+            --red-pill: #ff2e2e;
+            --blue-pill: #2e5cff;
+            --bg: #000;
+            --font: 'Courier New', Courier, monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font); }
+        body { background-color: var(--bg); color: var(--matrix-green); overflow: hidden; height: 100vh; width: 100vw; }
+        #matrix-canvas { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.3; }
+
+        /* ── PROGRESS DOTS ── */
+        #progress-dots {
+            position: fixed; top: 22px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 10px; z-index: 1000;
+        }
+        .dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            border: 2px solid var(--matrix-green); background: transparent;
+            transition: background 0.3s, transform 0.3s; cursor: pointer;
+        }
+        .dot.active { background: var(--matrix-green); transform: scale(1.4); box-shadow: 0 0 8px var(--matrix-green); }
+
+        /* ── BLUE PILL OVERLAY ── */
+        #blue-overlay {
+            display: none; position: fixed; inset: 0; background: var(--blue-pill);
+            z-index: 9999; justify-content: center; align-items: center; flex-direction: column;
+        }
+        #blue-overlay.show { display: flex; animation: blueFlash 0.4s ease; }
+        @keyframes blueFlash { 0% { opacity: 0; } 100% { opacity: 1; } }
+        #blue-overlay p {
+            font-size: 3.5rem; color: #fff; text-align: center;
+            line-height: 1.4; margin-bottom: 0;
+            animation: fadeInUp 0.6s ease 0.3s both;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── SLIDER ── */
+        .slider-container {
+            display: flex; width: 1100vw; height: 100vh;
+            transition: transform 0.7s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+        section {
+            width: 100vw; height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            padding: 5vw; position: relative; flex-shrink: 0;
+        }
+        .slide-content {
+            max-width: 1300px; width: 100%;
+            display: flex; flex-direction: column; align-items: center;
+            opacity: 0; transform: scale(0.9); transition: all 0.6s ease-out;
+        }
+        section.active .slide-content { opacity: 1; transform: scale(1); }
+
+        /* ── TYPOGRAPHY ── */
+        h1 { font-size: 5.5rem; text-shadow: 0 0 20px var(--matrix-green); text-align: center; margin-bottom: 20px; }
+        h2 { font-size: 3.8rem; border-bottom: 4px solid var(--matrix-green); margin-bottom: 40px; text-transform: uppercase; }
+        p { font-size: 2.2rem; line-height: 1.2; text-align: center; margin-bottom: 20px; }
+        .highlight { background: var(--matrix-green); color: #000; padding: 5px 15px; font-weight: bold; }
+
+        /* ── PHONE ── */
+        .phone-icon { font-size: 10rem; color: var(--matrix-green); }
+        .ringing { animation: ring 0.2s infinite; }
+        @keyframes ring {
+            0%,100% { transform: rotate(0); }
+            25%      { transform: rotate(10deg); }
+            75%      { transform: rotate(-10deg); }
+        }
+
+        /* ── PHONE BUTTONS ── */
+        .phone-btns { display: flex; gap: 80px; margin-top: 50px; align-items: center; }
+        .phone-btn-wrap { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+        .phone-btn {
+            width: 110px; height: 110px; border-radius: 50%; border: none;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            font-size: 2.8rem; color: #fff; transition: transform 0.2s;
+        }
+        .phone-btn:hover { transform: scale(1.12); }
+        .phone-btn.answer { background: var(--matrix-green); color: #000; animation: pulseAnswer 1.5s infinite; box-shadow: 0 0 30px rgba(0,255,65,0.6); }
+        .phone-btn.hangup { background: var(--red-pill); box-shadow: 0 0 30px rgba(255,46,46,0.5); }
+        .phone-btn-label { font-size: 1.3rem; opacity: 0.75; }
+        .phone-btn-label.answer { color: var(--matrix-green); }
+        .phone-btn-label.hangup { color: var(--red-pill); }
+        @keyframes pulseAnswer {
+            0%,100% { box-shadow: 0 0 30px rgba(0,255,65,0.6); }
+            50%      { box-shadow: 0 0 65px rgba(0,255,65,1); }
+        }
+
+        /* ── TERMINAL ── */
+        .terminal-text { font-size: 3.5rem; height: 1.2em; border-right: 4px solid var(--matrix-green); white-space: nowrap; overflow: hidden; }
+
+        /* ── PILLS ── */
+        .pill-box { display: flex; gap: 60px; margin-top: 50px; }
+        .pill { padding: 35px 70px; border-radius: 100px; cursor: pointer; font-weight: bold; font-size: 2.5rem; border: none; color: white; transition: 0.3s; }
+        .p-red { background: var(--red-pill); box-shadow: 0 0 50px var(--red-pill); }
+        .p-blue { background: var(--blue-pill); opacity: 0.85; }
+        .p-red:hover { transform: scale(1.15); box-shadow: 0 0 80px var(--red-pill); }
+        .p-blue:hover { animation: blueTremor 0.1s infinite; opacity: 1; }
+        @keyframes blueTremor {
+            0%   { transform: translate(0,0) rotate(0deg); }
+            25%  { transform: translate(-2px,1px) rotate(-0.5deg); }
+            50%  { transform: translate(2px,-1px) rotate(0.5deg); }
+            75%  { transform: translate(-1px,2px) rotate(-0.3deg); }
+            100% { transform: translate(1px,-2px) rotate(0.3deg); }
+        }
+
+        /* ── LABS ── */
+        .lab-box { background: rgba(0,40,0,0.9); border: 5px dashed var(--matrix-green); padding: 40px; width: 100%; }
+        .prompt-text { background: #000; color: #0f0; padding: 25px; font-size: 1.6rem; border-left: 12px solid var(--matrix-green); margin-bottom: 25px; text-align: left; }
+        .copy-btn { background: var(--matrix-green); color: #000; border: none; padding: 25px; cursor: pointer; font-size: 1.8rem; font-weight: bold; width: 100%; text-transform: uppercase; transition: background 0.2s; }
+        .copy-btn:hover { background: #fff; }
+
+        /* ── NAV ── */
+        .nav-controls { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; gap: 40px; z-index: 1000; }
+        .nav-btn {
+            background: #000; border: 3px solid var(--matrix-green); color: var(--matrix-green);
+            width: 80px; height: 80px; border-radius: 50%; cursor: pointer;
+            font-size: 2.5rem; display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s, opacity 0.3s;
+        }
+        .nav-btn:hover { background: var(--matrix-green); color: #000; }
+        .nav-btn.hidden { opacity: 0; pointer-events: none; }
+
+        /* ── TSUNAMI SLIDE ── */
+        .tsunami-slide { width: 100%; display: flex; flex-direction: column; align-items: flex-start; }
+        .toffler-quote-block { width: 100%; border-left: 8px solid var(--matrix-green); padding: 18px 30px; margin-bottom: 36px; background: rgba(0,255,65,0.04); }
+        .toffler-quote-block .quote-text { font-size: 1.85rem; font-style: italic; color: #fff; text-align: left; margin-bottom: 8px; line-height: 1.35; }
+        .toffler-quote-block .quote-author { font-size: 1.2rem; color: var(--matrix-green); text-align: left; margin: 0; opacity: 0.85; }
+        .wave-timeline { width: 100%; display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+        .wave-card { border: 2px solid var(--matrix-green); padding: 20px 18px 16px; display: flex; flex-direction: column; gap: 8px; background: rgba(0,20,0,0.7); position: relative; transition: box-shadow 0.3s; }
+        .wave-card:hover { box-shadow: 0 0 30px rgba(0,255,65,0.35); }
+        .wave-card.tsunami-card { border-color: #fff; background: rgba(0,255,65,0.10); border-width: 3px; box-shadow: 0 0 40px rgba(0,255,65,0.25); }
+        .wave-icon { font-size: 2.2rem; margin-bottom: 2px; }
+        .wave-label { font-size: 1.05rem; font-weight: bold; color: var(--matrix-green); text-transform: uppercase; letter-spacing: 1px; margin: 0; text-align: left; }
+        .wave-card.tsunami-card .wave-label { color: #fff; }
+        .wave-name { font-size: 1.55rem; font-weight: bold; color: #fff; margin: 0; text-align: left; }
+        .wave-duration { font-size: 0.95rem; color: var(--matrix-green); opacity: 0.7; margin: 0; text-align: left; }
+        .wave-desc { font-size: 1.0rem; color: #ccc; margin: 0; text-align: left; line-height: 1.4; }
+        .wave-card.tsunami-card .wave-desc { color: #fff; }
+        .wave-impact { font-size: 0.9rem; color: var(--matrix-green); font-style: italic; margin: 0; text-align: left; border-top: 1px solid rgba(0,255,65,0.3); padding-top: 6px; }
+        .wave-card.tsunami-card .wave-impact { color: #ffdd57; border-top-color: rgba(255,255,255,0.3); }
+        .elon-tag { display: inline-block; background: var(--matrix-green); color: #000; font-size: 0.8rem; font-weight: bold; padding: 2px 8px; margin-bottom: 4px; }
+        .wave-card::after { content: "▶"; position: absolute; right: -16px; top: 50%; transform: translateY(-50%); color: var(--matrix-green); font-size: 1rem; z-index: 2; }
+        .wave-card:last-child::after { display: none; }
+
+        /* ── ACCESS MATRIX CARDS ── */
+        .matrix-tool { border: 3px solid var(--matrix-green); padding: 30px 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; transition: 0.3s; }
+        .matrix-tool:hover { background: rgba(0,255,65,0.08); box-shadow: 0 0 30px rgba(0,255,65,0.3); transform: translateY(-4px); }
+        .matrix-tool i { font-size: 4rem; }
+        .matrix-tool p { font-size: 1.5rem; margin: 0; }
+        .matrix-tool a { text-decoration: none; font-size: 1.2rem; }
+
+        /* ── PREGUNTAS ESCALONADAS ── */
+        .question-block { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .question-block.visible { opacity: 1; transform: translateY(0); }
+
+        /* ── ELON SLIDE GLITCH ── */
+        .elon-slide { position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .wave-bg { position: absolute; bottom: -80px; left: -5vw; width: 110%; height: 200px; overflow: hidden; opacity: 0.1; pointer-events: none; }
+        .wave-bg svg { width: 100%; }
+        .glitch-text {
+            font-style: italic; font-size: 5rem; color: #fff; text-align: center;
+            text-shadow: 0 0 20px var(--matrix-green); animation: glitch 4s infinite;
+        }
+        @keyframes glitch {
+            0%,93%,100% { text-shadow: 0 0 20px var(--matrix-green); transform: translate(0,0); }
+            94% { text-shadow: -3px 0 #ff2e2e, 3px 0 #2e5cff; transform: translate(-2px,0); }
+            95% { text-shadow: 3px 0 #ff2e2e, -3px 0 #2e5cff; transform: translate(2px,0); }
+            96% { text-shadow: -2px 0 #ff2e2e, 2px 0 #2e5cff; transform: translate(0,1px); }
+            97% { text-shadow: 0 0 20px var(--matrix-green); transform: translate(0,0); }
+        }
+        .elon-author { text-align: right; width: 100%; font-size: 3rem; font-weight: bold; margin-top: 30px; opacity: 0.85; }
+
+        /* ── BOOT SEQUENCE ── */
+        #boot-sequence { font-size: 1.4rem; color: var(--matrix-green); text-align: left; width: 100%; max-width: 700px; min-height: 120px; margin-bottom: 30px; line-height: 1.8; }
+        #final-content { opacity: 0; transition: opacity 0.8s ease; text-align: center; }
+        #final-content.visible { opacity: 1; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } p { font-size: 1.2rem; }
+            .pill { padding: 15px 30px; font-size: 1.2rem; }
+            .prompt-text { font-size: 1.1rem; }
+            .wave-timeline { grid-template-columns: 1fr 1fr; }
+            .glitch-text { font-size: 2.8rem; }
+            #blue-overlay p { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    <div id="progress-dots"></div>
+
+    <!-- BLUE PILL OVERLAY -->
+    <div id="blue-overlay">
+        <p>Elegiste la comodidad.<br>El mundo seguirá cambiando<br>sin ti.</p>
+        <button onclick="exitBlueOverlay()" style="margin-top:50px; background:#fff; color:#000; border:none; padding:20px 50px; font-size:1.8rem; font-weight:bold; cursor:pointer; border-radius:8px; font-family:var(--font);">
+            Reconsiderar...
+        </button>
+    </div>
+
+    <div class="slider-container" id="slider">
+
+        <!-- SLIDE 0: TELÉFONO -->
+        <section class="active">
+            <div class="slide-content">
+                <i id="phone" class="fas fa-phone-alt phone-icon ringing"></i>
+                <p id="status-text" style="margin-top:40px; font-size:3rem;">LLAMADA ENTRANTE...</p>
+                <div class="phone-btns">
+                    <div class="phone-btn-wrap">
+                        <button class="phone-btn hangup" id="btn-hangup" onclick="hangUp()">
+                            <i class="fas fa-phone-slash"></i>
+                        </button>
+                        <span class="phone-btn-label hangup">COLGAR</span>
+                    </div>
+                    <div class="phone-btn-wrap">
+                        <button class="phone-btn answer" id="btn-answer" onclick="answerPhone()">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <span class="phone-btn-label answer">CONTESTAR</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 1: TERMINAL -->
+        <section>
+            <div class="slide-content">
+                <div id="terminal" class="terminal-text"></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: PASTILLAS -->
+        <section>
+            <div class="slide-content">
+                <p class="highlight" style="font-size:2.5rem; margin-bottom:40px;">"Esta es tu última oportunidad."</p>
+                <div class="pill-box">
+                    <button class="pill p-blue" onclick="takeBluePill()">AZUL</button>
+                    <button class="pill p-red" onclick="nextSlide()">ROJA</button>
+                </div>
+                <p style="margin-top:60px; max-width:1000px; font-style:italic; opacity:0.8;">"Tomas la azul: despiertas y crees lo que quieras creer. Tomas la roja: te enseño qué tan profundo es el agujero de conejo." — Morfeo</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: EL TSUNAMI COGNITIVO -->
+        <section>
+            <div class="slide-content">
+                <h2 style="margin-bottom:24px;">EL TSUNAMI COGNITIVO</h2>
+                <div class="tsunami-slide">
+                    <div class="toffler-quote-block">
+                        <p class="quote-text">"Los analfabetos del siglo XXI no serán quienes no sepan leer o escribir, sino quienes no puedan aprender, desaprender y reaprender."</p>
+                        <p class="quote-author">— Alvin Toffler · <em>The Third Wave</em> (1980)</p>
+                    </div>
+                    <div class="wave-timeline">
+                        <div class="wave-card">
+                            <span class="wave-icon">🌾</span>
+                            <p class="wave-label">1ª Ola</p>
+                            <p class="wave-name">Agraria</p>
+                            <p class="wave-duration">~10,000 años</p>
+                            <p class="wave-desc">El músculo humano y animal reemplazó al nomadismo. Surgieron ciudades, la escritura, el comercio y los imperios. La tierra era la riqueza.</p>
+                            <p class="wave-impact">Cambió: quién produce comida → quién gobierna el mundo.</p>
+                        </div>
+                        <div class="wave-card">
+                            <span class="wave-icon">⚙️</span>
+                            <p class="wave-label">2ª Ola</p>
+                            <p class="wave-name">Industrial</p>
+                            <p class="wave-duration">~300 años</p>
+                            <p class="wave-desc">La máquina de vapor multiplicó la fuerza humana. Fábricas, ferrocarriles, producción en masa. Millones migraron del campo a la ciudad.</p>
+                            <p class="wave-impact">Cambió: quién controla máquinas → quién controla naciones.</p>
+                        </div>
+                        <div class="wave-card">
+                            <span class="wave-icon">🌐</span>
+                            <p class="wave-label">3ª Ola</p>
+                            <p class="wave-name">Digital</p>
+                            <p class="wave-duration">~50 años</p>
+                            <p class="wave-desc">Internet conectó al mundo. El dato se volvió el nuevo petróleo. Amazon, Google y redes sociales destruyeron industrias en años, no décadas.</p>
+                            <p class="wave-impact">Cambió: quién tiene información → quién tiene poder.</p>
+                        </div>
+                        <div class="wave-card tsunami-card">
+                            <span class="elon-tag">ELON MUSK</span>
+                            <span class="wave-icon">⚡🌊</span>
+                            <p class="wave-label">4ª Ola</p>
+                            <p class="wave-name">IA Supersónica</p>
+                            <p class="wave-duration">Ahora. Sin frenos.</p>
+                            <p class="wave-desc">La IA no automatiza brazos: automatiza cerebros. No llegará en décadas. Ya está aquí y acelera exponencialmente.</p>
+                            <p class="wave-impact">"La IA es un tsunami supersónico." — Elon Musk</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: ACCESO A LA MATRIX -->
+        <section>
+            <div class="slide-content">
+                <h2>ACCESO A LA MATRIX</h2>
+                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:30px; width:100%;">
+                    <div class="matrix-tool">
+                        <i class="fas fa-search"></i>
+                        <p>PERPLEXITY.AI</p>
+                        <a href="https://www.perplexity.ai" target="_blank" class="highlight">ABRIR</a>
+                    </div>
+                    <div class="matrix-tool">
+                        <i class="fas fa-robot"></i>
+                        <p>COPILOT.MS</p>
+                        <a href="https://copilot.microsoft.com" target="_blank" class="highlight">ABRIR</a>
+                    </div>
+                    <div class="matrix-tool">
+                        <i class="fas fa-brain"></i>
+                        <p>CLAUDE.AI</p>
+                        <a href="https://claude.ai" target="_blank" class="highlight">ABRIR</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: LAB 1 -->
+        <section>
+            <div class="slide-content">
+                <h2>LAB 1: DIAGNÓSTICO</h2>
+                <div class="lab-box">
+                    <div class="prompt-text" id="p1">"Analiza mi negocio que es un restaurante/fonda. Identifica los 3 procesos de atención o cocina que más tiempo nos quitan y dime qué IA podría automatizarlos hoy."</div>
+                    <button class="copy-btn" onclick="copyPrompt('p1', this)">COPIAR PROMPT <i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: LAB 2 -->
+        <section>
+            <div class="slide-content">
+                <h2>LAB 2: ESTRATEGIA</h2>
+                <div class="lab-box">
+                    <div class="prompt-text" id="p2">"Mi competencia vende Tortas y Cemitas más baratas. Propón una estrategia basada en IA para personalizar la experiencia del cliente y que prefieran mi calidad sobre su precio."</div>
+                    <button class="copy-btn" onclick="copyPrompt('p2', this)">COPIAR PROMPT <i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: LAB 3 -->
+        <section>
+            <div class="slide-content">
+                <h2>LAB 3: DATA INSIGHTS</h2>
+                <p style="font-size:1.5rem;">(Específico para tu reporte de ventas)</p>
+                <div class="lab-box">
+                    <div class="prompt-text" id="p3">"Analiza este reporte: 1. ¿Qué combinaciones de Modificadores (picante, extras) aumentan más el ticket? 2. ¿Qué canal (Uber, Rappi, Local) es más rentable tras comisiones? 3. Identifica el 'Plato Estrella' y el 'Plato Perro'. Dame 3 acciones para limpiar el menú y subir 15% la ganancia."</div>
+                    <button class="copy-btn" onclick="copyPrompt('p3', this)">COPIAR PROMPT <i class="fas fa-copy"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: CUESTIONA TU REALIDAD -->
+        <section>
+            <div class="slide-content">
+                <h2>CUESTIONA TU REALIDAD</h2>
+                <div class="question-block" id="q1">
+                    <p style="font-size:2.8rem;">¿Qué pasaría con tu negocio si mañana apareciera un competidor que hace lo mismo que tú, pero 10 veces más rápido y a la mitad del costo, usando IA?</p>
+                </div>
+                <div class="question-block" id="q2" style="margin-top:35px;">
+                    <p style="font-size:2.8rem; color:#fff;">¿Estás usando la tecnología para hacer lo mismo de siempre más rápido, o para reimaginar por completo lo que ofreces?</p>
+                </div>
+                <div class="question-block" id="q3" style="margin-top:35px;">
+                    <p style="font-size:2.8rem; color:var(--matrix-green);">Si la IA pudiera liberarte del 80% de tus tareas operativas, ¿en qué enfocarías tu energía para crecer?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: CITA ELON GLITCH -->
+        <section>
+            <div class="slide-content">
+                <div class="elon-slide">
+                    <div class="wave-bg">
+                        <svg viewBox="0 0 1200 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0,100 C150,30 350,170 600,100 C850,30 1050,170 1200,100 L1200,200 L0,200 Z" fill="#00ff41"/>
+                            <path d="M0,120 C200,60 400,180 600,120 C800,60 1000,180 1200,120 L1200,200 L0,200 Z" fill="#00ff41" opacity="0.4"/>
+                        </svg>
+                    </div>
+                    <h1 class="glitch-text">"La IA es un tsunami supersónico."</h1>
+                    <p class="elon-author">— Elon Musk</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: SISTEMA CARGADO BOOT -->
+        <section>
+            <div class="slide-content">
+                <div id="boot-sequence"></div>
+                <div id="final-content">
+                    <h1>SISTEMA CARGADO</h1>
+                    <p>El despertar ha comenzado.</p>
+                    <button onclick="goToSlide(0)" class="pill p-red" style="margin-top:50px;">REINICIAR</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- NAV ARROWS: both hidden by default, shown after slide 0 -->
+    <div class="nav-controls">
+        <button class="nav-btn hidden" id="btn-prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+        <button class="nav-btn hidden" id="btn-next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script>
+        // ── MATRIX RAIN ──
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const alphabet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZｱｲｳｴｵｶｷｸｹｺ";
+        const fontSize = 18;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = Array(columns).fill(1);
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0,0,0,0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#0F0";
+            ctx.font = fontSize + "px monospace";
+            for (let i = 0; i < drops.length; i++) {
+                ctx.fillText(alphabet.charAt(Math.floor(Math.random() * alphabet.length)), i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+        setInterval(drawMatrix, 35);
+
+        // ── AUDIO ──
+        const phoneRing = document.getElementById('phoneRing');
+        const modemConnect = document.getElementById('modemConnect');
+        let ringInterval;
+
+        window.onload = () => {
+            phoneRing.volume = 0.6;
+            phoneRing.play().catch(() => {});
+            ringInterval = setInterval(() => { if (phoneRing.paused) phoneRing.play(); }, 12000);
+            buildDots();
+            updateSlider();
+        };
+
+        // ── PHONE ACTIONS ──
+        function answerPhone() {
+            clearInterval(ringInterval);
+            phoneRing.pause();
+            phoneRing.currentTime = 0;
+            modemConnect.volume = 0.7;
+            modemConnect.play().catch(() => {});
+            document.getElementById('phone').classList.remove('ringing');
+            document.getElementById('status-text').innerText = "CONEXIÓN ESTABLECIDA...";
+            document.getElementById('btn-answer').disabled = true;
+            document.getElementById('btn-hangup').disabled = true;
+            setTimeout(nextSlide, 2000);
+            setTimeout(startTerminal, 3000);
+        }
+
+        function hangUp() {
+            clearInterval(ringInterval);
+            phoneRing.pause();
+            phoneRing.currentTime = 0;
+            document.getElementById('phone').classList.remove('ringing');
+            document.getElementById('status-text').innerText = "LLAMADA RECHAZADA.";
+            document.getElementById('btn-answer').style.display = 'none';
+            document.getElementById('btn-hangup').style.display = 'none';
+            setTimeout(() => {
+                document.getElementById('status-text').innerText = "...";
+                setTimeout(() => {
+                    document.getElementById('status-text').innerText = "LLAMADA ENTRANTE...";
+                    document.getElementById('phone').classList.add('ringing');
+                    document.getElementById('btn-answer').style.display = 'flex';
+                    document.getElementById('btn-hangup').style.display = 'flex';
+                    phoneRing.play().catch(() => {});
+                    ringInterval = setInterval(() => { if (phoneRing.paused) phoneRing.play(); }, 12000);
+                }, 2000);
+            }, 1500);
+        }
+
+        // ── TERMINAL TYPEWRITER ──
+        function startTerminal() {
+            const term = document.getElementById('terminal');
+            const lines = ["Despierta...", "La IA tiene el control.", "Sigue al conejo blanco.", "Toc, toc."];
+            let lIdx = 0, cIdx = 0;
+            function type() {
+                if (lIdx < lines.length) {
+                    if (cIdx < lines[lIdx].length) {
+                        term.innerHTML += lines[lIdx].charAt(cIdx);
+                        cIdx++;
+                        setTimeout(type, 80);
+                    } else {
+                        setTimeout(() => { term.innerHTML = ""; lIdx++; cIdx = 0; type(); }, 1200);
+                    }
+                } else {
+                    nextSlide();
+                }
+            }
+            type();
+        }
+
+        // ── BLUE PILL ──
+        function takeBluePill() {
+            document.getElementById('blue-overlay').classList.add('show');
+        }
+        function exitBlueOverlay() {
+            const overlay = document.getElementById('blue-overlay');
+            overlay.style.transition = 'opacity 0.5s';
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.classList.remove('show');
+                overlay.style.opacity = '';
+                overlay.style.transition = '';
+            }, 500);
+        }
+
+        // ── SLIDER ──
+        const slider = document.getElementById('slider');
+        const slides = document.querySelectorAll('section');
+        let currentSlide = 0;
+        let bootDone = false;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}vw)`;
+            slides.forEach((s, i) => s.classList.toggle('active', i === currentSlide));
+            updateDots();
+
+            // Nav arrows logic
+            const btnPrev = document.getElementById('btn-prev');
+            const btnNext = document.getElementById('btn-next');
+            // On slide 0: both hidden
+            btnPrev.classList.toggle('hidden', currentSlide === 0);
+            btnNext.classList.toggle('hidden', currentSlide === 0 || currentSlide === slides.length - 1);
+
+            // Slide 8: staggered questions
+            if (currentSlide === 8) {
+                document.getElementById('q1').classList.remove('visible');
+                document.getElementById('q2').classList.remove('visible');
+                document.getElementById('q3').classList.remove('visible');
+                setTimeout(() => document.getElementById('q1').classList.add('visible'), 400);
+                setTimeout(() => document.getElementById('q2').classList.add('visible'), 1300);
+                setTimeout(() => document.getElementById('q3').classList.add('visible'), 2200);
+            } else {
+                document.getElementById('q1').classList.remove('visible');
+                document.getElementById('q2').classList.remove('visible');
+                document.getElementById('q3').classList.remove('visible');
+            }
+
+            // Slide 10: boot sequence
+            if (currentSlide === 10 && !bootDone) runBootSequence();
+        }
+
+        function runBootSequence() {
+            bootDone = true;
+            const boot = document.getElementById('boot-sequence');
+            boot.innerHTML = '';
+            document.getElementById('final-content').classList.remove('visible');
+            // Play dial-up modem sound on final slide
+            modemConnect.currentTime = 0;
+            modemConnect.volume = 0.6;
+            modemConnect.play().catch(() => {});
+            const lines = [
+                '> Iniciando protocolo de despertar...',
+                '> Cargando módulo IA_TSUNAMI v4.0...',
+                '> Sincronizando neuronas digitales...',
+                '> Acceso concedido. Bienvenido.',
+            ];
+            let i = 0;
+            function addLine() {
+                if (i < lines.length) {
+                    boot.innerHTML += lines[i] + '<br>';
+                    i++;
+                    setTimeout(addLine, 650);
+                } else {
+                    setTimeout(() => document.getElementById('final-content').classList.add('visible'), 500);
+                }
+            }
+            addLine();
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) { currentSlide++; updateSlider(); }
+        }
+        function prevSlide() {
+            if (currentSlide > 0) { currentSlide--; updateSlider(); }
+        }
+        function goToSlide(n) {
+            currentSlide = n;
+            if (n !== 10) {
+                bootDone = false;
+                document.getElementById('boot-sequence').innerHTML = '';
+                document.getElementById('final-content').classList.remove('visible');
+            }
+            updateSlider();
+        }
+
+        // ── PROGRESS DOTS ──
+        function buildDots() {
+            const container = document.getElementById('progress-dots');
+            slides.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goToSlide(i);
+                container.appendChild(dot);
+            });
+        }
+        function updateDots() {
+            document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+        }
+
+        // ── COPY PROMPT ──
+        function copyPrompt(id, btn) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const old = btn.innerHTML;
+                btn.innerHTML = "¡COPIADO! ✓";
+                btn.style.background = "#fff";
+                setTimeout(() => { btn.innerHTML = old; btn.style.background = "var(--matrix-green)"; }, 2000);
+            });
+        }
+
+        // ── KEYBOARD ──
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); nextSlide(); }
+            if (e.key === "ArrowLeft") prevSlide();
+            if (e.key === "f" || e.key === "F") {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen().catch(() => {});
+                } else {
+                    document.exitFullscreen().catch(() => {});
+                }
+            }
+        });
+
+        // ── TOUCH SWIPE ──
+        let touchStartX = 0;
+        document.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; });
+        document.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) { diff > 0 ? nextSlide() : prevSlide(); }
+        });
+    </script>
+</body>
+</html>
