@@ -3,38 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Gallery | Organic Compost & Lawn Services | San Antonio, North Spring Branch</title>
-    <meta name="description" content="Watch drone timelapse videos of our organic compost and lawn care processes in San Antonio. See the before-and-after transformations from the air!">
+    <title>Video Gallery | Soil Force | San Antonio Organic Lawn Care</title>
+    <meta name="description" content="Watch drone timelapse videos of Soil Force organic compost and lawn care processes in San Antonio. See real before-and-after aerial transformations.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
-        body { font-family: Arial, sans-serif; color: #333; }
-        .page-header {
-            background: url('images/banner.png') center/cover no-repeat;
-            height: 40vh;
-            min-height: 300px;
-            color: white;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+        :root {
+            --green-deep:  #1a4d2e;
+            --green-mid:   #2d7a4f;
+            --green-light: #4caf72;
+            --gold:        #c8a84b;
+            --cream:       #f7f4ee;
+            --dark:        #111811;
+            --text:        #2e3a2e;
         }
-        .navbar-brand img {
-            height: 50px;
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--text); background: #fff; }
+
+        /* NAVBAR */
+        .navbar { background: rgba(255,255,255,0.97) !important; backdrop-filter: blur(8px); border-bottom: 2px solid var(--green-mid); padding: .6rem 0; }
+        .navbar-brand img { height: 52px; }
+        .navbar-brand span { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--green-deep); font-weight: 700; display: block; line-height: 1.1; }
+        .nav-link { font-weight: 500; color: var(--text) !important; letter-spacing: .03em; transition: color .2s; }
+        .nav-link:hover, .nav-link.active { color: var(--green-mid) !important; }
+        .btn-nav-call { background: var(--green-mid); color: #fff !important; border-radius: 50px; padding: 8px 22px; font-weight: 600; transition: background .2s, transform .15s; }
+        .btn-nav-call:hover { background: var(--green-deep); transform: translateY(-1px); }
+
+        /* PAGE HEADER */
+        .page-header { position: relative; background: url('images/banner.png') center/cover no-repeat; min-height: 320px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; overflow: hidden; }
+        .page-header::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,30,15,.6), rgba(10,30,15,.8)); }
+        .page-header-content { position: relative; z-index: 1; padding: 60px 20px; }
+        .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; margin-bottom: .5rem; }
+        .page-header p { font-size: 1.1rem; opacity: .85; }
+        .breadcrumb-bar { background: var(--cream); padding: 10px 0; border-bottom: 1px solid rgba(45,122,79,.12); font-size: .85rem; color: #8a9a8a; }
+        .breadcrumb-bar a { color: var(--green-mid); text-decoration: none; font-weight: 600; }
+
+        /* SECTION TYPOGRAPHY */
+        .section-label { font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: .4rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; color: var(--green-deep); line-height: 1.2; }
+        .section-divider { width: 52px; height: 3px; background: var(--gold); margin: 14px 0 20px; }
+
+        /* VIDEO GRID */
+        .video-gallery { padding: 80px 0; }
+
+        .video-card {
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1.5px solid rgba(45,122,79,.1);
+            box-shadow: 0 4px 24px rgba(26,77,46,.07);
+            background: #fff;
+            height: 100%;
+            transition: transform .25s, box-shadow .25s;
         }
-        .btn-call {
-            background: #28a745;
+        .video-card:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(26,77,46,.14); }
+
+        /* Responsive 16:9 iframe */
+        .video-wrap {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            background: var(--dark);
+        }
+        .video-wrap iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             border: none;
-            font-size: 1.3rem;
-            padding: 12px 30px;
         }
-        .floating-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            font-size: 1.2rem;
-            padding: 15px 20px;
+
+        .video-card-body { padding: 24px 22px; }
+        .video-tag {
+            display: inline-block;
+            background: rgba(45,122,79,.1);
+            color: var(--green-mid);
+            font-size: .73rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            padding: 3px 12px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+        }
+        .video-card-body h5 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--green-deep); margin-bottom: 6px; }
+        .video-card-body p { color: #6b7a6b; font-size: .88rem; line-height: 1.6; }
+
+        /* FEATURED VIDEO */
+        .featured-video { padding: 0 0 80px; }
+        .featured-video-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--gold);
+            color: var(--dark);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+
+        /* CTA BANNER */
+        .cta-banner { background: linear-gradient(100deg, var(--green-deep) 0%, #1e6035 60%, var(--green-mid) 100%); padding: 80px 0; color: #fff; text-align: center; }
+        .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 14px; }
+        .cta-banner p { font-size: 1.05rem; opacity: .85; margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
+        .btn-cta-gold { background: var(--gold); color: var(--dark); font-size: 1.15rem; padding: 16px 42px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 6px 28px rgba(200,168,75,.4); transition: transform .2s, box-shadow .2s; }
+        .btn-cta-gold:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(200,168,75,.5); color: var(--dark); }
+        .btn-cta-outline-white { background: transparent; border: 2px solid rgba(255,255,255,.55); color: #fff; font-size: 1rem; padding: 14px 30px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s; }
+        .btn-cta-outline-white:hover { background: rgba(255,255,255,.12); border-color: #fff; color: #fff; }
+
+        /* FOOTER */
+        footer { background: var(--dark); color: rgba(255,255,255,.75); padding: 64px 0 0; }
+        .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #fff; font-weight: 900; margin-bottom: 10px; }
+        .footer-tagline { font-size: .9rem; opacity: .65; margin-bottom: 20px; line-height: 1.6; }
+        .footer-heading { font-weight: 700; color: #fff; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 18px; }
+        footer ul { list-style: none; padding: 0; }
+        footer ul li { margin-bottom: 10px; }
+        footer ul li a { color: rgba(255,255,255,.6); text-decoration: none; font-size: .93rem; transition: color .2s; }
+        footer ul li a:hover { color: var(--gold); }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; font-size: .93rem; }
+        .footer-contact-item i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
+        .footer-divider { border-color: rgba(255,255,255,.1); margin: 40px 0 0; }
+        .footer-bottom { padding: 18px 0; font-size: .82rem; opacity: .5; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+        .footer-bottom a { color: var(--gold); text-decoration: none; opacity: 1; font-weight: 600; }
+        .footer-bottom a:hover { text-decoration: underline; }
+
+        /* FLOATING BTN */
+        .floating-btn { position: fixed; bottom: 22px; right: 22px; z-index: 9999; background: var(--green-mid); color: #fff; font-size: 1rem; padding: 14px 24px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 6px 24px rgba(45,122,79,.5); display: flex; align-items: center; gap: 8px; transition: background .2s, transform .15s; animation: pulse-btn 2.8s ease infinite; }
+        .floating-btn:hover { background: var(--green-deep); color: #fff; transform: translateY(-2px); }
+        @keyframes pulse-btn { 0%,100% { box-shadow: 0 6px 24px rgba(45,122,79,.5); } 50% { box-shadow: 0 6px 36px rgba(45,122,79,.8); } }
+        @media (max-width: 576px) { .footer-bottom { justify-content: center; text-align: center; } }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="images/logo.png" alt="Soil Force Logo">
+            <span>Soil Force</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="testimonials.html">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link active" href="videos.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item ms-lg-2">
+                    <a href="tel:+17262343062" class="nav-link btn-nav-call">
+                        <i class="fas fa-phone-alt me-1"></i> (726) 234-3062
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header">
+    <div class="page-header-content">
+        <span style="display:inline-block;background:var(--gold);color:var(--dark);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:14px;">Drone Footage</span>
+        <h1>Video Gallery</h1>
+        <p>Aerial timelapse views of our organic lawn transformations in San Antonio</p>
+    </div>
+</header>
+<div class="breadcrumb-bar">
+    <div class="container">
+        <a href="index.html">Home</a> <span class="mx-2" style="opacity:.4;">/</span> Video Gallery
+    </div>
+</div>
+
+<!-- VIDEO GALLERY -->
+<section class="video-gallery">
+    <div class="container">
+        <div class="text-center mb-5">
+            <p class="section-label">See the Process</p>
+            <h2 class="section-title">Watch the Transformation from Above</h2>
+            <div class="section-divider mx-auto"></div>
+            <p style="max-width:560px;margin:0 auto;color:#6b7a6b;line-height:1.7;">
+                Drone footage captured during real Soil Force jobs — compost delivery, leveling, fertilization, and aeration — all in San Antonio.
+            </p>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+                <div class="video-card">
+                    <div class="video-wrap">
+                        <iframe src="https://www.youtube.com/embed/Qr3g-CQ3WTc?si=OO5hkR74k6HWPP4V" title="Compost Delivery Timelapse San Antonio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-body">
+                        <span class="video-tag"><i class="fas fa-seedling me-1"></i> Compost</span>
+                        <h5>Compost Delivery & Topdressing Timelapse</h5>
+                        <p>Aerial view of our organic compost application transforming a compacted San Antonio yard from start to finish.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="video-card">
+                    <div class="video-wrap">
+                        <iframe src="https://www.youtube.com/embed/O8g8MHvLkFQ?si=tqYe-oZZ-pWokQhE" title="Lawn Leveling Drone View San Antonio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-body">
+                        <span class="video-tag"><i class="fas fa-layer-group me-1"></i> Leveling</span>
+                        <h5>Lawn Leveling Drone View</h5>
+                        <p>Timelapse from the air showing an uneven, bumpy yard graded down to a perfectly smooth surface.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="video-card">
+                    <div class="video-wrap">
+                        <iframe src="https://www.youtube.com/embed/JG_JeMeGHn8?si=k1RkfZhqeQpLekXv" title="Organic Fertilization Transformation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-body">
+                        <span class="video-tag"><i class="fas fa-sun me-1"></i> Fertilization</span>
+                        <h5>Year-Round Fertilization Transformation</h5>
+                        <p>Drone footage showing grass greening up progressively over a full organic fertilization season.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="video-card">
+                    <div class="video-wrap">
+                        <iframe src="https://www.youtube.com/embed/_He61Q9UyjA?si=w1di7gNt8c7BZber" title="Core Aeration Timelapse San Antonio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-body">
+                        <span class="video-tag"><i class="fas fa-wind me-1"></i> Aeration</span>
+                        <h5>Core Aeration Timelapse</h5>
+                        <p>Before-and-after aerial footage of compacted soil opened up with professional core aeration equipment.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="container">
+        <i class="fas fa-drone fa-2x mb-3" style="color:var(--gold);"></i>
+        <i class="fas fa-leaf fa-2x mb-3" style="color:var(--gold);"></i>
+        <h2>Impressed? Let's Do This for Your Lawn.</h2>
+        <p>Call us today for a free on-site estimate — we'll show you exactly what your yard needs and what it'll look like after.</p>
+        <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <a href="tel:+17262343062" class="btn-cta-gold">
+                <i class="fas fa-phone-alt"></i> Call (726) 234-3062
+            </a>
+            <a href="contact.html" class="btn-cta-outline-white">
+                <i class="fas fa-calendar-check"></i> Book Free Estimate
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <div class="footer-brand">🌿 Soil Force</div>
+                <p class="footer-tagline">San Antonio's trusted source for professional, affordable, and 100% organic lawn care. Proudly serving families and homeowners across the greater SA area.</p>
+                <a href="tel:+17262343062" style="color:var(--gold);font-size:1.1rem;font-weight:700;text-decoration:none;"><i class="fas fa-phone-alt me-2"></i>(726) 234-3062</a>
+            </div>
+            <div class="col-6 col-lg-2">
+                <p class="footer-heading">Navigate</p>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="testimonials.html">Reviews</a></li>
+                    <li><a href="videos.html">Video Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <p class="footer-heading">Services</p>
+                <ul>
+                    <li><a href="services.html">Compost Application</a></li>
+                    <li><a href="services.html">Lawn Leveling</a></li>
+                    <li><a href="services.html">Core Aeration</a></li>
+                    <li><a href="services.html">Fertilization</a></li>
+                    <li><a href="services.html">Lawn Restoration</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <p class="footer-heading">Get in Touch</p>
+                <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><div><a href="tel:+17262343062" style="color:rgba(255,255,255,.7);text-decoration:none;">(726) 234-3062</a><br><small style="opacity:.5;">Mon–Sat, 7:00 AM – 6:00 PM</small></div></div>
+                <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><div>San Antonio, TX<br><small style="opacity:.5;">North Spring Branch & surrounding areas</small></div></div>
+                <div class="footer-contact-item"><i class="fas fa-calendar-check"></i><div><a href="contact.html" style="color:var(--gold);text-decoration:none;font-weight:600;">Request a Free Estimate →</a></div></div>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom">
+            <div>© 2025 Soil Force · All rights reserved</div>
+            <div>Made with <span style="color:#e25555;">♥</span> by <a href="https://x.com/guilebaldo" target="_blank" rel="noopener">guilebaldo</a></div>
+        </div>
+    </div>
+</footer>
+
+<a href="tel:+17262343062" class="floating-btn d-lg-none"><i class="fas fa-phone-alt"></i> Call Now</a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>            padding: 15px 20px;
             border-radius: 50px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
