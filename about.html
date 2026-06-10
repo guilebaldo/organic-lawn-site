@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Soil Force | San Antonio Organic Lawn Care</title>
-    <meta name="description" content="Organic compost delivery, lawn leveling, year-round fertilization and core aeration in San Antonio, TX. Affordable, professional, 100% organic services by Soil Force.">
+    <title>About Us | Soil Force | San Antonio Organic Lawn Care</title>
+    <meta name="description" content="Soil Force is a family-owned organic lawn care business serving San Antonio and North Spring Branch. Professional, affordable, eco-friendly compost and lawn services.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,238 +26,77 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'DM Sans', sans-serif; color: var(--text); background: #fff; }
 
-        /* ─── NAVBAR ─── */
-        .navbar {
-            background: rgba(255,255,255,0.97) !important;
-            backdrop-filter: blur(8px);
-            border-bottom: 2px solid var(--green-mid);
-            padding: .6rem 0;
-        }
+        /* NAVBAR */
+        .navbar { background: rgba(255,255,255,0.97) !important; backdrop-filter: blur(8px); border-bottom: 2px solid var(--green-mid); padding: .6rem 0; }
         .navbar-brand img { height: 52px; }
-        .navbar-brand span {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--green-deep);
-            font-weight: 700;
-            display: block;
-            line-height: 1.1;
-        }
+        .navbar-brand span { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--green-deep); font-weight: 700; display: block; line-height: 1.1; }
         .nav-link { font-weight: 500; color: var(--text) !important; letter-spacing: .03em; transition: color .2s; }
         .nav-link:hover, .nav-link.active { color: var(--green-mid) !important; }
-        .btn-nav-call {
-            background: var(--green-mid);
-            color: #fff !important;
-            border-radius: 50px;
-            padding: 8px 22px;
-            font-weight: 600;
-            transition: background .2s, transform .15s;
-        }
+        .btn-nav-call { background: var(--green-mid); color: #fff !important; border-radius: 50px; padding: 8px 22px; font-weight: 600; transition: background .2s, transform .15s; }
         .btn-nav-call:hover { background: var(--green-deep); transform: translateY(-1px); }
 
-        /* ─── PAGE HEADER ─── */
-        .page-header {
-            position: relative;
-            background: url('images/banner.png') center/cover no-repeat;
-            min-height: 320px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            overflow: hidden;
-        }
-        .page-header::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(10,30,15,.6), rgba(10,30,15,.8));
-        }
+        /* PAGE HEADER */
+        .page-header { position: relative; background: url('images/banner.png') center/cover no-repeat; min-height: 320px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; overflow: hidden; }
+        .page-header::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(10,30,15,.6), rgba(10,30,15,.8)); }
         .page-header-content { position: relative; z-index: 1; padding: 60px 20px; }
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3.2rem);
-            font-weight: 900;
-            margin-bottom: .5rem;
-        }
+        .page-header h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; margin-bottom: .5rem; }
         .page-header p { font-size: 1.1rem; opacity: .85; }
-        .breadcrumb-bar {
-            background: var(--cream);
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(45,122,79,.12);
-            font-size: .85rem;
-            color: #8a9a8a;
-        }
+        .breadcrumb-bar { background: var(--cream); padding: 10px 0; border-bottom: 1px solid rgba(45,122,79,.12); font-size: .85rem; color: #8a9a8a; }
         .breadcrumb-bar a { color: var(--green-mid); text-decoration: none; font-weight: 600; }
 
-        /* ─── SECTION TYPOGRAPHY ─── */
-        .section-label {
-            font-size: .75rem; font-weight: 700; letter-spacing: .18em;
-            text-transform: uppercase; color: var(--green-mid); margin-bottom: .4rem;
-        }
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 4vw, 2.6rem);
-            font-weight: 900; color: var(--green-deep); line-height: 1.2;
-        }
+        /* SECTION TYPOGRAPHY */
+        .section-label { font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--green-mid); margin-bottom: .4rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; color: var(--green-deep); line-height: 1.2; }
         .section-divider { width: 52px; height: 3px; background: var(--gold); margin: 14px 0 20px; }
 
-        /* ─── SERVICE CARDS ─── */
-        .services-grid { padding: 80px 0; }
+        /* ABOUT STORY */
+        .about-story { padding: 90px 0; }
+        .about-story p { color: #6b7a6b; line-height: 1.8; margin-bottom: 16px; font-size: .97rem; }
+        .value-list { list-style: none; padding: 0; margin: 24px 0 32px; }
+        .value-list li { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+        .value-icon { width: 36px; height: 36px; background: linear-gradient(135deg, var(--green-mid), var(--green-light)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: .9rem; flex-shrink: 0; margin-top: 2px; }
+        .value-list li div strong { display: block; color: var(--green-deep); font-weight: 700; margin-bottom: 2px; }
+        .value-list li div span { color: #6b7a6b; font-size: .9rem; line-height: 1.6; }
 
-        .service-card {
-            border-radius: 18px;
-            overflow: hidden;
-            border: 1.5px solid rgba(45,122,79,.12);
-            box-shadow: 0 4px 24px rgba(26,77,46,.07);
-            height: 100%;
-            background: #fff;
-            transition: transform .25s, box-shadow .25s;
-            display: flex;
-            flex-direction: column;
-        }
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 14px 40px rgba(26,77,46,.14);
-        }
-        .service-card-img {
-            height: 240px;
-            object-fit: cover;
-            width: 100%;
-        }
-        .service-card-img-placeholder {
-            height: 240px;
+        /* LOGO CARD */
+        .logo-card {
             background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+            border-radius: 24px;
+            padding: 56px 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.5rem;
-            color: rgba(255,255,255,.3);
+            min-height: 340px;
+            box-shadow: 0 20px 60px rgba(26,77,46,.25);
         }
-        .service-card-body {
-            padding: 32px 28px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-        .service-icon {
-            width: 52px; height: 52px;
-            background: linear-gradient(135deg, var(--green-mid), var(--green-light));
-            border-radius: 14px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: #fff;
-            margin-bottom: 16px;
-        }
-        .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--green-deep);
-            margin-bottom: 10px;
-        }
-        .service-card p { color: #6b7a6b; font-size: .95rem; line-height: 1.7; margin-bottom: 16px; }
-        .service-checklist { list-style: none; padding: 0; margin-bottom: 24px; }
-        .service-checklist li {
-            font-size: .9rem;
-            color: var(--text);
-            padding: 4px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .service-checklist li::before {
-            content: '';
-            width: 18px; height: 18px;
-            background: linear-gradient(135deg, var(--green-mid), var(--green-light));
-            border-radius: 50%;
-            flex-shrink: 0;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
-            background-size: cover;
-        }
-        .btn-service {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--green-mid);
-            color: #fff;
-            padding: 12px 26px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: .95rem;
-            text-decoration: none;
-            margin-top: auto;
-            transition: background .2s, transform .15s;
-            width: fit-content;
-        }
-        .btn-service:hover { background: var(--green-deep); color: #fff; transform: translateY(-1px); }
+        .logo-card img { max-width: 220px; filter: brightness(0) invert(1); opacity: .9; }
 
-        /* ─── PROCESS STRIP ─── */
-        .process-strip {
-            background: var(--green-deep);
-            padding: 70px 0;
-            color: #fff;
-        }
-        .process-step { text-align: center; padding: 16px; }
-        .process-num {
-            width: 56px; height: 56px;
-            border: 2px solid var(--gold);
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 900;
-            color: var(--gold);
-            margin-bottom: 14px;
-        }
-        .process-step h6 { font-weight: 700; margin-bottom: 6px; font-size: 1rem; }
-        .process-step p { opacity: .7; font-size: .88rem; line-height: 1.6; }
-        .process-arrow {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            opacity: .5;
-            font-size: 1.4rem;
-            padding-top: 20px;
-        }
+        /* STATS ROW */
+        .stats-row { background: var(--green-deep); padding: 60px 0; color: #fff; }
+        .stat-box { text-align: center; padding: 16px; }
+        .stat-num { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.2rem); font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+        .stat-label { font-size: .9rem; opacity: .75; font-weight: 500; }
 
-        /* ─── CTA BANNER ─── */
-        .cta-banner {
-            background: linear-gradient(100deg, var(--green-deep) 0%, #1e6035 60%, var(--green-mid) 100%);
-            padding: 80px 0;
-            color: #fff;
-            text-align: center;
-        }
-        .cta-banner h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.9rem, 4vw, 2.8rem);
-            font-weight: 900;
-            margin-bottom: 14px;
-        }
+        /* BEFORE/AFTER */
+        .before-after { padding: 90px 0; background: var(--cream); }
+        .ba-card { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(26,77,46,.1); border: 1.5px solid rgba(45,122,79,.1); }
+        .ba-card img { width: 100%; height: 260px; object-fit: cover; }
+        .ba-card-body { padding: 20px 24px; background: #fff; }
+        .ba-badge { display: inline-block; padding: 4px 14px; border-radius: 50px; font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+        .ba-badge.before { background: #fce8e6; color: #c0392b; }
+        .ba-badge.after  { background: #e6f4ea; color: var(--green-deep); }
+        .ba-card-body p { color: #6b7a6b; font-size: .9rem; }
+
+        /* CTA BANNER */
+        .cta-banner { background: linear-gradient(100deg, var(--green-deep) 0%, #1e6035 60%, var(--green-mid) 100%); padding: 80px 0; color: #fff; text-align: center; }
+        .cta-banner h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 900; margin-bottom: 14px; }
         .cta-banner p { font-size: 1.05rem; opacity: .85; margin-bottom: 36px; max-width: 540px; margin-left: auto; margin-right: auto; }
-        .btn-cta-gold {
-            background: var(--gold); color: var(--dark);
-            font-size: 1.15rem; padding: 16px 42px; border-radius: 50px;
-            font-weight: 700; text-decoration: none;
-            display: inline-flex; align-items: center; gap: 10px;
-            box-shadow: 0 6px 28px rgba(200,168,75,.4);
-            transition: transform .2s, box-shadow .2s;
-        }
+        .btn-cta-gold { background: var(--gold); color: var(--dark); font-size: 1.15rem; padding: 16px 42px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 6px 28px rgba(200,168,75,.4); transition: transform .2s, box-shadow .2s; }
         .btn-cta-gold:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(200,168,75,.5); color: var(--dark); }
-        .btn-cta-outline-white {
-            background: transparent; border: 2px solid rgba(255,255,255,.55);
-            color: #fff; font-size: 1rem; padding: 14px 30px; border-radius: 50px;
-            font-weight: 600; text-decoration: none;
-            display: inline-flex; align-items: center; gap: 8px;
-            transition: background .2s;
-        }
+        .btn-cta-outline-white { background: transparent; border: 2px solid rgba(255,255,255,.55); color: #fff; font-size: 1rem; padding: 14px 30px; border-radius: 50px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background .2s; }
         .btn-cta-outline-white:hover { background: rgba(255,255,255,.12); border-color: #fff; color: #fff; }
 
-        /* ─── FOOTER ─── */
+        /* FOOTER */
         footer { background: var(--dark); color: rgba(255,255,255,.75); padding: 64px 0 0; }
         .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #fff; font-weight: 900; margin-bottom: 10px; }
         .footer-tagline { font-size: .9rem; opacity: .65; margin-bottom: 20px; line-height: 1.6; }
@@ -269,32 +108,16 @@
         .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; font-size: .93rem; }
         .footer-contact-item i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
         .footer-divider { border-color: rgba(255,255,255,.1); margin: 40px 0 0; }
-        .footer-bottom {
-            padding: 18px 0; font-size: .82rem; opacity: .5;
-            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
-        }
+        .footer-bottom { padding: 18px 0; font-size: .82rem; opacity: .5; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
         .footer-bottom a { color: var(--gold); text-decoration: none; opacity: 1; font-weight: 600; }
         .footer-bottom a:hover { text-decoration: underline; }
 
-        /* ─── FLOATING BTN ─── */
-        .floating-btn {
-            position: fixed; bottom: 22px; right: 22px; z-index: 9999;
-            background: var(--green-mid); color: #fff;
-            font-size: 1rem; padding: 14px 24px; border-radius: 50px; font-weight: 700;
-            text-decoration: none; box-shadow: 0 6px 24px rgba(45,122,79,.5);
-            display: flex; align-items: center; gap: 8px;
-            transition: background .2s, transform .15s;
-            animation: pulse-btn 2.8s ease infinite;
-        }
+        /* FLOATING BTN */
+        .floating-btn { position: fixed; bottom: 22px; right: 22px; z-index: 9999; background: var(--green-mid); color: #fff; font-size: 1rem; padding: 14px 24px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 6px 24px rgba(45,122,79,.5); display: flex; align-items: center; gap: 8px; transition: background .2s, transform .15s; animation: pulse-btn 2.8s ease infinite; }
         .floating-btn:hover { background: var(--green-deep); color: #fff; transform: translateY(-2px); }
-        @keyframes pulse-btn {
-            0%,100% { box-shadow: 0 6px 24px rgba(45,122,79,.5); }
-            50%      { box-shadow: 0 6px 36px rgba(45,122,79,.8); }
-        }
+        @keyframes pulse-btn { 0%,100% { box-shadow: 0 6px 24px rgba(45,122,79,.5); } 50% { box-shadow: 0 6px 36px rgba(45,122,79,.8); } }
 
-        @media (max-width: 576px) {
-            .footer-bottom { justify-content: center; text-align: center; }
-        }
+        @media (max-width: 576px) { .footer-bottom { justify-content: center; text-align: center; } }
     </style>
 </head>
 <body>
@@ -312,8 +135,8 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
                 <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="testimonials.html">Reviews</a></li>
                 <li class="nav-item"><a class="nav-link" href="videos.html">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -330,153 +153,99 @@
 <!-- PAGE HEADER -->
 <header class="page-header">
     <div class="page-header-content">
-        <span style="display:inline-block;background:var(--gold);color:var(--dark);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:14px;">100% Organic</span>
-        <h1>Professional Lawn Services</h1>
-        <p>Serving San Antonio & North Spring Branch with results you can see</p>
+        <span style="display:inline-block;background:var(--gold);color:var(--dark);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:14px;">Family Owned</span>
+        <h1>About Soil Force</h1>
+        <p>Your trusted local organic lawn care experts in San Antonio</p>
     </div>
 </header>
 <div class="breadcrumb-bar">
     <div class="container">
-        <a href="index.html">Home</a> <span class="mx-2" style="opacity:.4;">/</span> Services
+        <a href="index.html">Home</a> <span class="mx-2" style="opacity:.4;">/</span> About
     </div>
 </div>
 
-<!-- SERVICES GRID -->
-<section class="services-grid">
+<!-- ABOUT STORY -->
+<section class="about-story">
     <div class="container">
-        <div class="text-center mb-5">
-            <p class="section-label">What We Offer</p>
-            <h2 class="section-title">Four Ways to a Healthier Lawn</h2>
-            <div class="section-divider mx-auto"></div>
-            <p style="max-width:580px;margin:0 auto;color:#6b7a6b;line-height:1.7;">
-                Every service uses organic, chemical-free products — safe for your family, your pets, and San Antonio's soil.
-            </p>
-        </div>
-
-        <div class="row g-4">
-
-            <!-- 1 Compost -->
+        <div class="row align-items-center g-5">
             <div class="col-lg-6">
-                <div class="service-card">
-                    <img src="images/compost.png" class="service-card-img" alt="Organic Compost Delivery & Topdressing San Antonio">
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fas fa-seedling"></i></div>
-                        <h3>Organic Compost Delivery & Topdressing</h3>
-                        <p>Premium locally-sourced organic compost delivered and spread evenly across your yard. Perfect for improving San Antonio's tough clay soils and restoring tired lawns back to life.</p>
-                        <ul class="service-checklist">
-                            <li>High-quality screened compost</li>
-                            <li>Even topdressing application</li>
-                            <li>Boosts soil microbiome naturally</li>
-                            <li>Great for new lawns & revitalization</li>
-                        </ul>
-                        <a href="tel:+17262343062" class="btn-service">
-                            <i class="fas fa-phone-alt"></i> Call for Pricing
-                        </a>
-                    </div>
+                <p class="section-label">Our Story</p>
+                <h2 class="section-title">Locally Rooted, Organically Driven</h2>
+                <div class="section-divider"></div>
+                <p>Soil Force is a proud San Antonio family business dedicated to providing high-quality, organic lawn care to homeowners in North Spring Branch and surrounding neighborhoods. We started with one simple belief: your lawn should be healthy for your family, not just green on the surface.</p>
+                <p>With years of hands-on experience in the tough Texas climate, we've developed a deep understanding of San Antonio's soils, its summers, and what it takes to maintain a genuinely thriving lawn here. That's why we focus exclusively on 100% organic solutions — no harsh chemicals, just natural compost, fertilization, and proven techniques that deliver lasting results.</p>
+                <p>When you call Soil Force, you talk directly to us. No call centers, no middlemen — just an honest conversation about your yard and how we can help.</p>
+
+                <ul class="value-list">
+                    <li>
+                        <div class="value-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><strong>Locally owned & operated</strong><span>Based in San Antonio — we live and work in the same neighborhoods we serve.</span></div>
+                    </li>
+                    <li>
+                        <div class="value-icon"><i class="fas fa-seedling"></i></div>
+                        <div><strong>100% organic products</strong><span>No synthetic chemicals. Ever. Safe for your kids, your dogs, and the soil microbiome.</span></div>
+                    </li>
+                    <li>
+                        <div class="value-icon"><i class="fas fa-comments"></i></div>
+                        <div><strong>Direct communication</strong><span>You always talk to the owner — we answer fast and give straight, honest answers.</span></div>
+                    </li>
+                    <li>
+                        <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div><strong>Satisfaction guaranteed</strong><span>We're not done until you're happy. Every single job, every single time.</span></div>
+                    </li>
+                </ul>
+
+                <a href="tel:+17262343062" class="btn-cta-gold" style="font-size:1rem;padding:13px 30px;">
+                    <i class="fas fa-phone-alt"></i> Call Us Directly
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="logo-card">
+                    <img src="images/logo.png" alt="Soil Force organic lawn care San Antonio">
                 </div>
             </div>
-
-            <!-- 2 Leveling -->
-            <div class="col-lg-6">
-                <div class="service-card">
-                    <img src="images/leveling.png" class="service-card-img" alt="Lawn Leveling Yard Grading San Antonio">
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fas fa-layer-group"></i></div>
-                        <h3>Lawn Leveling & Yard Grading</h3>
-                        <p>Bumpy, uneven yards that collect water and look rough are no match for our leveling service. We topdress and grade your lawn for a smooth, professional surface that drains properly.</p>
-                        <ul class="service-checklist">
-                            <li>Professional grading equipment</li>
-                            <li>Topsoil & compost mix included</li>
-                            <li>Improves drainage significantly</li>
-                            <li>Clean, minimal-mess process</li>
-                        </ul>
-                        <a href="tel:+17262343062" class="btn-service">
-                            <i class="fas fa-calendar-check"></i> Get a Free Quote
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3 Fertilization -->
-            <div class="col-lg-6">
-                <div class="service-card">
-                    <img src="images/fertilizer.png" class="service-card-img" alt="Year-Round Organic Fertilization San Antonio">
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fas fa-sun"></i></div>
-                        <h3>Year-Round Organic Fertilization</h3>
-                        <p>Keep your lawn thick, green, and thriving through every Texas season with our custom organic fertilizer program. No harsh chemicals — safe for kids, pets, and the environment.</p>
-                        <ul class="service-checklist">
-                            <li>Seasonal applications for Texas climate</li>
-                            <li>Slow-release natural nutrients</li>
-                            <li>Promotes deep roots & drought resistance</li>
-                            <li>Kid & pet safe, always</li>
-                        </ul>
-                        <a href="tel:+17262343062" class="btn-service">
-                            <i class="fas fa-phone-alt"></i> Schedule Service
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4 Aeration -->
-            <div class="col-lg-6">
-                <div class="service-card">
-                    <img src="images/aeration.png" class="service-card-img" alt="Core Aeration San Antonio">
-                    <div class="service-card-body">
-                        <div class="service-icon"><i class="fas fa-wind"></i></div>
-                        <h3>Core Aeration</h3>
-                        <p>Relieve soil compaction so water, air, and nutrients can finally reach the root zone. Essential for thick, strong grass in San Antonio's heavy clay soils — best paired with compost topdressing.</p>
-                        <ul class="service-checklist">
-                            <li>Professional core aerator machines</li>
-                            <li>Best done in spring or fall</li>
-                            <li>Pairs perfectly with compost topdressing</li>
-                            <li>Visible improvement in weeks</li>
-                        </ul>
-                        <a href="tel:+17262343062" class="btn-service">
-                            <i class="fas fa-calendar-check"></i> Book Aeration
-                        </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
 
-<!-- PROCESS STRIP -->
-<section class="process-strip">
+<!-- STATS ROW -->
+<section class="stats-row">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">500+</div><div class="stat-label">Lawns Transformed</div></div></div>
+            <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">5★</div><div class="stat-label">Average Rating</div></div></div>
+            <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">8+</div><div class="stat-label">Years in San Antonio</div></div></div>
+            <div class="col-6 col-md-3"><div class="stat-box"><div class="stat-num">100%</div><div class="stat-label">Organic Products</div></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="before-after">
     <div class="container">
         <div class="text-center mb-5">
-            <p class="section-label" style="color:var(--gold);">How It Works</p>
-            <h2 class="section-title" style="color:#fff;">Simple. Fast. Organic.</h2>
+            <p class="section-label">Visual Results</p>
+            <h2 class="section-title">See the Organic Difference</h2>
+            <div class="section-divider mx-auto"></div>
+            <p style="max-width:520px;margin:0 auto;color:#6b7a6b;">Real San Antonio lawns, real transformations — no filters, no staging.</p>
         </div>
-        <div class="row align-items-start g-2">
-            <div class="col-6 col-md-3">
-                <div class="process-step">
-                    <div class="process-num">1</div>
-                    <h6>Call or Message Us</h6>
-                    <p>Reach us directly — no call centers, you always talk to the owner.</p>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-5">
+                <div class="ba-card">
+                    <img src="images/before.png" alt="Lawn before Soil Force organic treatment">
+                    <div class="ba-card-body">
+                        <span class="ba-badge before">Before</span>
+                        <p>Thin, patchy grass with compacted soil and poor drainage</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-6 col-md-3">
-                <div class="process-step">
-                    <div class="process-num">2</div>
-                    <h6>Free On-Site Estimate</h6>
-                    <p>We visit your property and give a clear, honest quote — no pressure.</p>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="process-step">
-                    <div class="process-num">3</div>
-                    <h6>We Get to Work</h6>
-                    <p>Our crew arrives on time with all equipment and organic materials ready.</p>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="process-step">
-                    <div class="process-num">4</div>
-                    <h6>Enjoy Your Lawn</h6>
-                    <p>See real results in weeks. We follow up to make sure you're satisfied.</p>
+            <div class="col-md-5">
+                <div class="ba-card">
+                    <img src="images/after.png" alt="Lawn after Soil Force organic compost and fertilization">
+                    <div class="ba-card-body">
+                        <span class="ba-badge after">After</span>
+                        <p>Thick, vibrant green lawn that stays healthy all year round</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -486,9 +255,9 @@
 <!-- CTA BANNER -->
 <section class="cta-banner">
     <div class="container">
-        <i class="fas fa-leaf fa-2x mb-3" style="color:var(--gold);"></i>
-        <h2>Ready for a Greener Lawn?</h2>
-        <p>Call us today or send a message — we respond fast and always give a straight answer.</p>
+        <i class="fas fa-phone-alt fa-2x mb-3" style="color:var(--gold);"></i>
+        <h2>Let's Transform Your Lawn Together</h2>
+        <p>Call us today for a free estimate visit — we'll take a look at your yard and give you an honest, upfront quote.</p>
         <div class="d-flex flex-wrap gap-3 justify-content-center">
             <a href="tel:+17262343062" class="btn-cta-gold">
                 <i class="fas fa-phone-alt"></i> Call (726) 234-3062
@@ -507,9 +276,7 @@
             <div class="col-lg-4">
                 <div class="footer-brand">🌿 Soil Force</div>
                 <p class="footer-tagline">San Antonio's trusted source for professional, affordable, and 100% organic lawn care. Proudly serving families and homeowners across the greater SA area.</p>
-                <a href="tel:+17262343062" style="color:var(--gold);font-size:1.1rem;font-weight:700;text-decoration:none;">
-                    <i class="fas fa-phone-alt me-2"></i>(726) 234-3062
-                </a>
+                <a href="tel:+17262343062" style="color:var(--gold);font-size:1.1rem;font-weight:700;text-decoration:none;"><i class="fas fa-phone-alt me-2"></i>(726) 234-3062</a>
             </div>
             <div class="col-6 col-lg-2">
                 <p class="footer-heading">Navigate</p>
@@ -534,21 +301,9 @@
             </div>
             <div class="col-lg-4">
                 <p class="footer-heading">Get in Touch</p>
-                <div class="footer-contact-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <div>
-                        <a href="tel:+17262343062" style="color:rgba(255,255,255,.7);text-decoration:none;">(726) 234-3062</a><br>
-                        <small style="opacity:.5;">Mon–Sat, 7:00 AM – 6:00 PM</small>
-                    </div>
-                </div>
-                <div class="footer-contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>San Antonio, TX<br><small style="opacity:.5;">North Spring Branch & surrounding areas</small></div>
-                </div>
-                <div class="footer-contact-item">
-                    <i class="fas fa-calendar-check"></i>
-                    <div><a href="contact.html" style="color:var(--gold);text-decoration:none;font-weight:600;">Request a Free Estimate →</a></div>
-                </div>
+                <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><div><a href="tel:+17262343062" style="color:rgba(255,255,255,.7);text-decoration:none;">(726) 234-3062</a><br><small style="opacity:.5;">Mon–Sat, 7:00 AM – 6:00 PM</small></div></div>
+                <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><div>San Antonio, TX<br><small style="opacity:.5;">North Spring Branch & surrounding areas</small></div></div>
+                <div class="footer-contact-item"><i class="fas fa-calendar-check"></i><div><a href="contact.html" style="color:var(--gold);text-decoration:none;font-weight:600;">Request a Free Estimate →</a></div></div>
             </div>
         </div>
         <hr class="footer-divider">
@@ -559,10 +314,7 @@
     </div>
 </footer>
 
-<a href="tel:+17262343062" class="floating-btn d-lg-none">
-    <i class="fas fa-phone-alt"></i> Call Now
-</a>
-
+<a href="tel:+17262343062" class="floating-btn d-lg-none"><i class="fas fa-phone-alt"></i> Call Now</a>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
