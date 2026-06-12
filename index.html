@@ -761,8 +761,7 @@
     <!-- Responsive YouTube background -->
     <div class="hero-video-wrap">
         <iframe
-            id="heroVideoFrame"
-            src="https://www.youtube.com/embed/O8g8MHvLkFQ?autoplay=1&mute=1&loop=1&playlist=O8g8MHvLkFQ&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&disablekb=1&iv_load_policy=3&fs=0&origin=https://soil-force.com"
+            src="https://www.youtube.com/embed/O8g8MHvLkFQ?autoplay=1&mute=1&loop=1&playlist=O8g8MHvLkFQ&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&disablekb=1&iv_load_policy=3&fs=0"
             title="Drone Timelapse – Organic Lawn Care San Antonio"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1169,44 +1168,6 @@
     window.addEventListener('resize', fitHeroVideo);
 </script>
 
-<!-- iOS Autoplay Fix for Hero Background Video -->
-<script>
-    (function () {
-        const heroFrame = document.getElementById('heroVideoFrame');
-        if (!heroFrame) return;
-
-        function postToPlayer(func) {
-            try {
-                heroFrame.contentWindow.postMessage(
-                    JSON.stringify({ event: 'command', func: func, args: [] }),
-                    '*'
-                );
-            } catch (e) {}
-        }
-
-        function tryPlay() {
-            postToPlayer('mute');
-            postToPlayer('playVideo');
-        }
-
-        // Repeatedly nudge the player to start, in case it's not "ready" yet
-        let attempts = 0;
-        const interval = setInterval(function () {
-            tryPlay();
-            attempts++;
-            if (attempts > 10) clearInterval(interval);
-        }, 500);
-
-        // iOS sometimes needs a real user gesture before it will play —
-        // catch the very first tap/scroll anywhere on the page as a fallback
-        ['touchstart', 'click', 'scroll'].forEach(function (evt) {
-            document.addEventListener(evt, tryPlay, { once: true, passive: true });
-        });
-
-        window.addEventListener('load', tryPlay);
-    })();
-</script>
-
 <!-- $50 Discount Popup Logic -->
 <script>
     (function () {
@@ -1277,4 +1238,3 @@
 
 </body>
 </html>
-
