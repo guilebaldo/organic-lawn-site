@@ -761,7 +761,7 @@
     <!-- Responsive YouTube background -->
     <div class="hero-video-wrap">
         <iframe
-            src="https://www.youtube.com/embed/O8g8MHvLkFQ?autoplay=1&mute=1&loop=1&playlist=O8g8MHvLkFQ&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&disablekb=1&iv_load_policy=3&fs=0"
+            src="https://www.youtube.com/embed/O8g8MHvLkFQ?autoplay=1&mute=1&loop=1&playlist=O8g8MHvLkFQ&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1"
             title="Drone Timelapse – Organic Lawn Care San Antonio"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1150,30 +1150,22 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Ensure hero video starts (Safari sometimes needs a nudge after metadata loads) -->
+<!-- Responsive YT iframe sizing for older browsers -->
 <script>
-    (function () {
-        const heroVideo = document.querySelector('.hero-video-wrap video');
-        if (!heroVideo) return;
-
-        function tryPlay() {
-            const p = heroVideo.play();
-            if (p && typeof p.catch === 'function') {
-                p.catch(function () { /* will retry on user interaction */ });
-            }
-        }
-
-        heroVideo.muted = true;
-        tryPlay();
-
-        document.addEventListener('visibilitychange', function () {
-            if (!document.hidden) tryPlay();
-        });
-
-        ['touchstart', 'click'].forEach(function (evt) {
-            document.addEventListener(evt, tryPlay, { once: true, passive: true });
-        });
-    })();
+    function fitHeroVideo() {
+        const wrap = document.querySelector('.hero-video-wrap');
+        const iframe = wrap ? wrap.querySelector('iframe') : null;
+        if (!iframe) return;
+        const W = wrap.offsetWidth;
+        const H = wrap.offsetHeight;
+        // YT aspect 16:9; ensure cover
+        const scaleW = W / (H * 16/9);
+        const scaleH = H / (W * 9/16);
+        const scale = Math.max(scaleW, scaleH, 1) * 1.06;
+        iframe.style.transform = `scale(${scale})`;
+    }
+    window.addEventListener('load', fitHeroVideo);
+    window.addEventListener('resize', fitHeroVideo);
 </script>
 
 <!-- $50 Discount Popup Logic -->
@@ -1246,4 +1238,3 @@
 
 </body>
 </html>
-
