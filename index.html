@@ -1150,22 +1150,30 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Responsive YT iframe sizing for older browsers -->
+<!-- Ensure hero video starts (Safari sometimes needs a nudge after metadata loads) -->
 <script>
-    function fitHeroVideo() {
-        const wrap = document.querySelector('.hero-video-wrap');
-        const iframe = wrap ? wrap.querySelector('iframe') : null;
-        if (!iframe) return;
-        const W = wrap.offsetWidth;
-        const H = wrap.offsetHeight;
-        // YT aspect 16:9; ensure cover
-        const scaleW = W / (H * 16/9);
-        const scaleH = H / (W * 9/16);
-        const scale = Math.max(scaleW, scaleH, 1) * 1.06;
-        iframe.style.transform = `scale(${scale})`;
-    }
-    window.addEventListener('load', fitHeroVideo);
-    window.addEventListener('resize', fitHeroVideo);
+    (function () {
+        const heroVideo = document.querySelector('.hero-video-wrap video');
+        if (!heroVideo) return;
+
+        function tryPlay() {
+            const p = heroVideo.play();
+            if (p && typeof p.catch === 'function') {
+                p.catch(function () { /* will retry on user interaction */ });
+            }
+        }
+
+        heroVideo.muted = true;
+        tryPlay();
+
+        document.addEventListener('visibilitychange', function () {
+            if (!document.hidden) tryPlay();
+        });
+
+        ['touchstart', 'click'].forEach(function (evt) {
+            document.addEventListener(evt, tryPlay, { once: true, passive: true });
+        });
+    })();
 </script>
 
 <!-- $50 Discount Popup Logic -->
@@ -1238,3 +1246,4 @@
 
 </body>
 </html>
+
