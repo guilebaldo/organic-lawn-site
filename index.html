@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,565 +6,732 @@
     <title>Soil Force | Organic Lawn Care San Antonio, North Spring Branch</title>
     <meta name="description" content="Soil Force – Affordable organic compost, lawn leveling, aeration and fertilization in San Antonio. Professional service - Call (726) 234-3062">
 
-```
-<!-- Google Fonts: Playfair Display + DM Sans -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Playfair Display + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-    :root {
-        --green-deep:  #1a4d2e;
-        --green-mid:   #2d7a4f;
-        --green-light: #4caf72;
-        --gold:        #c8a84b;
-        --cream:       #f7f4ee;
-        --dark:        #111811;
-        --text:        #2e3a2e;
-    }
+    <style>
+        :root {
+            --green-deep:  #1a4d2e;
+            --green-mid:   #2d7a4f;
+            --green-light: #4caf72;
+            --gold:        #c8a84b;
+            --cream:       #f7f4ee;
+            --dark:        #111811;
+            --text:        #2e3a2e;
+        }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; }
 
-    body {
-        font-family: 'DM Sans', sans-serif;
-        color: var(--text);
-        background: #fff;
-    }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: #fff;
+        }
 
-    /* ─── NAVBAR ─────────────────────────────────────── */
-    .navbar {
-        background: rgba(255,255,255,0.97) !important;
-        backdrop-filter: blur(8px);
-        border-bottom: 2px solid var(--green-mid);
-        padding: 0.6rem 0;
-    }
-    .navbar-brand img { height: 52px; }
-    .navbar-brand span {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.1rem;
-        color: var(--green-deep);
-        font-weight: 700;
-        display: block;
-        line-height: 1.1;
-    }
-    .nav-link {
-        font-weight: 500;
-        color: var(--text) !important;
-        letter-spacing: .03em;
-        transition: color .2s;
-    }
-    .nav-link:hover { color: var(--green-mid) !important; }
-    .btn-nav-call {
-        background: var(--green-mid);
-        color: #fff !important;
-        border-radius: 50px;
-        padding: 8px 22px;
-        font-weight: 600;
-        transition: background .2s, transform .15s;
-    }
-    .btn-nav-call:hover {
-        background: var(--green-deep);
-        transform: translateY(-1px);
-    }
+        /* ─── NAVBAR ─────────────────────────────────────── */
+        .navbar {
+            background: rgba(255,255,255,0.97) !important;
+            backdrop-filter: blur(8px);
+            border-bottom: 2px solid var(--green-mid);
+            padding: 0.6rem 0;
+        }
+        .navbar-brand img { height: 52px; }
+        .navbar-brand span {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--green-deep);
+            font-weight: 700;
+            display: block;
+            line-height: 1.1;
+        }
+        .nav-link {
+            font-weight: 500;
+            color: var(--text) !important;
+            letter-spacing: .03em;
+            transition: color .2s;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--green-mid) !important; }
+        .btn-nav-call {
+            background: var(--green-mid);
+            color: #fff !important;
+            border-radius: 50px;
+            padding: 8px 22px;
+            font-weight: 600;
+            transition: background .2s, transform .15s;
+        }
+        .btn-nav-call:hover {
+            background: var(--green-deep);
+            transform: translateY(-1px);
+        }
 
-    /* ─── HERO ───────────────────────────────────────── */
-    .hero {
-        position: relative;
-        width: 100%;
-        /* Responsive height using aspect-ratio trick with a min-height */
-        min-height: 520px;
-        height: 82vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #fff;
-        overflow: hidden;
-    }
+        /* ─── HERO ───────────────────────────────────────── */
+        .hero {
+            position: relative;
+            width: 100%;
+            /* Responsive height using aspect-ratio trick with a min-height */
+            min-height: 520px;
+            height: 82vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+        }
 
-    /* Responsive iframe approach */
-    .hero-video-wrap {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-    }
-    .hero-video-wrap iframe {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* Make YT iframe fill without black bars */
-        transform: scale(1.05);
-    }
+        /* Responsive iframe approach */
+        .hero-video-wrap {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .hero-video-wrap iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Make YT iframe fill without black bars */
+            transform: scale(1.05);
+        }
 
-    .hero-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-            to bottom,
-            rgba(10,30,15,0.55) 0%,
-            rgba(10,30,15,0.70) 60%,
-            rgba(10,30,15,0.85) 100%
-        );
-        z-index: 1;
-    }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(10,30,15,0.55) 0%,
+                rgba(10,30,15,0.70) 60%,
+                rgba(10,30,15,0.85) 100%
+            );
+            z-index: 1;
+        }
 
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 760px;
-        padding: 0 1.5rem;
-        animation: fadeUp .9s ease both;
-    }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 760px;
+            padding: 0 1.5rem;
+            animation: fadeUp .9s ease both;
+        }
 
-    @keyframes fadeUp {
-        from { opacity: 0; transform: translateY(28px); }
-        to   { opacity: 1; transform: translateY(0); }
-    }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
 
-    .hero-eyebrow {
-        display: inline-block;
-        background: var(--gold);
-        color: var(--dark);
-        font-size: .78rem;
-        font-weight: 700;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        padding: 5px 16px;
-        border-radius: 50px;
-        margin-bottom: 1.1rem;
-    }
+        .hero-eyebrow {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 1.1rem;
+        }
 
-    .hero h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(2.2rem, 5.5vw, 4rem);
-        font-weight: 900;
-        line-height: 1.13;
-        margin-bottom: .7rem;
-        text-shadow: 0 2px 20px rgba(0,0,0,.4);
-    }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5.5vw, 4rem);
+            font-weight: 900;
+            line-height: 1.13;
+            margin-bottom: .7rem;
+            text-shadow: 0 2px 20px rgba(0,0,0,.4);
+        }
 
-    .hero-sub {
-        font-size: clamp(1.05rem, 2.5vw, 1.35rem);
-        font-weight: 300;
-        opacity: .9;
-        margin-bottom: 2rem;
-        letter-spacing: .02em;
-    }
+        .hero-sub {
+            font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+            font-weight: 300;
+            opacity: .9;
+            margin-bottom: 2rem;
+            letter-spacing: .02em;
+        }
 
-    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-    .btn-hero-primary {
-        background: var(--green-mid);
-        color: #fff;
-        border: none;
-        font-size: 1.15rem;
-        padding: 15px 36px;
-        border-radius: 50px;
-        font-weight: 700;
-        letter-spacing: .03em;
-        box-shadow: 0 6px 24px rgba(45,122,79,.45);
-        transition: background .2s, transform .15s, box-shadow .2s;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-    }
-    .btn-hero-primary:hover {
-        background: var(--green-deep);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(45,122,79,.55);
-        color: #fff;
-    }
+        .btn-hero-primary {
+            background: var(--green-mid);
+            color: #fff;
+            border: none;
+            font-size: 1.15rem;
+            padding: 15px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: .03em;
+            box-shadow: 0 6px 24px rgba(45,122,79,.45);
+            transition: background .2s, transform .15s, box-shadow .2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-hero-primary:hover {
+            background: var(--green-deep);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45,122,79,.55);
+            color: #fff;
+        }
 
-    .btn-hero-secondary {
-        background: rgba(255,255,255,0.12);
-        border: 2px solid rgba(255,255,255,0.6);
-        color: #fff;
-        font-size: 1rem;
-        padding: 13px 28px;
-        border-radius: 50px;
-        font-weight: 600;
-        backdrop-filter: blur(4px);
-        text-decoration: none;
-        transition: background .2s, border-color .2s;
-    }
-    .btn-hero-secondary:hover {
-        background: rgba(255,255,255,0.22);
-        border-color: #fff;
-        color: #fff;
-    }
+        .btn-hero-secondary {
+            background: rgba(255,255,255,0.12);
+            border: 2px solid rgba(255,255,255,0.6);
+            color: #fff;
+            font-size: 1rem;
+            padding: 13px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            text-decoration: none;
+            transition: background .2s, border-color .2s;
+        }
+        .btn-hero-secondary:hover {
+            background: rgba(255,255,255,0.22);
+            border-color: #fff;
+            color: #fff;
+        }
 
-    /* scroll cue */
-    .scroll-cue {
-        position: absolute;
-        bottom: 22px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
-        animation: bounce 1.8s infinite;
-        opacity: .7;
-    }
-    @keyframes bounce {
-        0%,100% { transform: translateX(-50%) translateY(0); }
-        50%      { transform: translateX(-50%) translateY(8px); }
-    }
+        /* scroll cue */
+        .scroll-cue {
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: bounce 1.8s infinite;
+            opacity: .7;
+        }
+        @keyframes bounce {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50%      { transform: translateX(-50%) translateY(8px); }
+        }
 
-    /* ─── TRUST BAR ─────────────────────────────────── */
-    .trust-bar {
-        background: var(--green-deep);
-        color: #fff;
-        padding: 14px 0;
-        text-align: center;
-        font-size: .95rem;
-        font-weight: 500;
-        letter-spacing: .04em;
-    }
-    .trust-bar span { margin: 0 18px; opacity: .9; }
-    .trust-bar i { color: var(--gold); margin-right: 6px; }
+        /* ─── TRUST BAR ─────────────────────────────────── */
+        .trust-bar {
+            background: var(--green-deep);
+            color: #fff;
+            padding: 14px 0;
+            text-align: center;
+            font-size: .95rem;
+            font-weight: 500;
+            letter-spacing: .04em;
+        }
+        .trust-bar span { margin: 0 18px; opacity: .9; }
+        .trust-bar i { color: var(--gold); margin-right: 6px; }
 
-    /* ─── SECTION TITLES ─────────────────────────────── */
-    .section-label {
-        font-size: .75rem;
-        font-weight: 700;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: var(--green-mid);
-        margin-bottom: .4rem;
-    }
-    .section-title {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(1.8rem, 4vw, 2.8rem);
-        font-weight: 900;
-        color: var(--green-deep);
-        line-height: 1.2;
-    }
-    .section-divider {
-        width: 52px;
-        height: 3px;
-        background: var(--gold);
-        margin: 16px 0 20px;
-    }
+        /* ─── SECTION TITLES ─────────────────────────────── */
+        .section-label {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--green-mid);
+            margin-bottom: .4rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 900;
+            color: var(--green-deep);
+            line-height: 1.2;
+        }
+        .section-divider {
+            width: 52px;
+            height: 3px;
+            background: var(--gold);
+            margin: 16px 0 20px;
+        }
 
-    /* ─── BENEFITS ───────────────────────────────────── */
-    .benefits { background: var(--cream); padding: 80px 0; }
+        /* ─── BENEFITS ───────────────────────────────────── */
+        .benefits { background: var(--cream); padding: 80px 0; }
 
-    .benefit-card {
-        background: #fff;
-        border-radius: 16px;
-        padding: 36px 28px;
-        height: 100%;
-        border: 1.5px solid rgba(45,122,79,.12);
-        box-shadow: 0 4px 24px rgba(26,77,46,.07);
-        text-align: center;
-        transition: transform .25s, box-shadow .25s;
-    }
-    .benefit-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 36px rgba(26,77,46,.14);
-    }
-    .benefit-icon {
-        width: 64px; height: 64px;
-        background: linear-gradient(135deg, var(--green-mid), var(--green-light));
-        border-radius: 18px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 18px;
-        font-size: 1.5rem;
-        color: #fff;
-    }
-    .benefit-card h5 {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.15rem;
-        font-weight: 700;
-        color: var(--green-deep);
-        margin-bottom: 8px;
-    }
-    .benefit-card p { color: #6b7a6b; font-size: .95rem; line-height: 1.6; }
+        .benefit-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 36px 28px;
+            height: 100%;
+            border: 1.5px solid rgba(45,122,79,.12);
+            box-shadow: 0 4px 24px rgba(26,77,46,.07);
+            text-align: center;
+            transition: transform .25s, box-shadow .25s;
+        }
+        .benefit-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 36px rgba(26,77,46,.14);
+        }
+        .benefit-icon {
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, var(--green-mid), var(--green-light));
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        .benefit-card h5 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--green-deep);
+            margin-bottom: 8px;
+        }
+        .benefit-card p { color: #6b7a6b; font-size: .95rem; line-height: 1.6; }
 
-    /* ─── SERVICES PREVIEW ───────────────────────────── */
-    .services { padding: 90px 0; }
+        /* ─── SERVICES PREVIEW ───────────────────────────── */
+        .services { padding: 90px 0; }
 
-    .service-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 24px;
-        border-radius: 14px;
-        border: 1.5px solid rgba(45,122,79,.1);
-        margin-bottom: 18px;
-        background: #fff;
-        transition: border-color .2s, box-shadow .2s;
-    }
-    .service-item:hover {
-        border-color: var(--green-mid);
-        box-shadow: 0 6px 24px rgba(45,122,79,.1);
-    }
-    .service-num {
-        flex-shrink: 0;
-        width: 46px; height: 46px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
-        color: #fff;
-        font-family: 'Playfair Display', serif;
-        font-size: 1.2rem;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .service-item h6 {
-        font-weight: 700;
-        color: var(--green-deep);
-        margin-bottom: 4px;
-        font-size: 1rem;
-    }
-    .service-item p { color: #6b7a6b; font-size: .9rem; margin: 0; line-height: 1.55; }
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px;
+            border-radius: 14px;
+            border: 1.5px solid rgba(45,122,79,.1);
+            margin-bottom: 18px;
+            background: #fff;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        .service-item:hover {
+            border-color: var(--green-mid);
+            box-shadow: 0 6px 24px rgba(45,122,79,.1);
+        }
+        .service-num {
+            flex-shrink: 0;
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .service-item h6 {
+            font-weight: 700;
+            color: var(--green-deep);
+            margin-bottom: 4px;
+            font-size: 1rem;
+        }
+        .service-item p { color: #6b7a6b; font-size: .9rem; margin: 0; line-height: 1.55; }
 
-    .services-cta-box {
-        background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
-        border-radius: 20px;
-        padding: 44px 36px;
-        color: #fff;
-        text-align: center;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .services-cta-box h3 {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.9rem;
-        font-weight: 900;
-        margin-bottom: 12px;
-    }
-    .services-cta-box p { opacity: .85; margin-bottom: 24px; font-size: 1rem; }
+        .services-cta-box {
+            background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+            border-radius: 20px;
+            padding: 44px 36px;
+            color: #fff;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .services-cta-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+        .services-cta-box p { opacity: .85; margin-bottom: 24px; font-size: 1rem; }
 
-    /* ─── SOCIAL PROOF ───────────────────────────────── */
-    .social-proof {
-        background: var(--green-deep);
-        color: #fff;
-        padding: 80px 0;
-    }
-    .stat-box { text-align: center; padding: 16px; }
-    .stat-num {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        font-weight: 900;
-        color: var(--gold);
-        line-height: 1;
-        margin-bottom: 6px;
-    }
-    .stat-label { font-size: .95rem; opacity: .8; font-weight: 500; }
+        /* ─── SOCIAL PROOF ───────────────────────────────── */
+        .social-proof {
+            background: var(--green-deep);
+            color: #fff;
+            padding: 80px 0;
+        }
+        .stat-box { text-align: center; padding: 16px; }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .stat-label { font-size: .95rem; opacity: .8; font-weight: 500; }
 
-    /* ─── TESTIMONIALS ───────────────────────────────── */
-    .testimonials { padding: 90px 0; background: var(--cream); }
+        /* ─── TESTIMONIALS ───────────────────────────────── */
+        .testimonials { padding: 90px 0; background: var(--cream); }
 
-    .testi-card {
-        background: #fff;
-        border-radius: 16px;
-        padding: 32px 28px;
-        height: 100%;
-        box-shadow: 0 4px 20px rgba(26,77,46,.07);
-        border: 1.5px solid rgba(45,122,79,.1);
-    }
-    .testi-stars { color: #f4c02e; font-size: 1rem; margin-bottom: 14px; }
-    .testi-card p { color: var(--text); font-size: .97rem; line-height: 1.7; margin-bottom: 18px; font-style: italic; }
-    .testi-author { font-weight: 700; color: var(--green-deep); font-size: .9rem; }
-    .testi-area { color: #8a9a8a; font-size: .82rem; }
-    .quote-mark { font-size: 3rem; line-height: 1; color: var(--green-light); opacity: .4; font-family: Georgia, serif; margin-bottom: -8px; }
+        .testi-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px 28px;
+            height: 100%;
+            box-shadow: 0 4px 20px rgba(26,77,46,.07);
+            border: 1.5px solid rgba(45,122,79,.1);
+        }
+        .testi-stars { color: #f4c02e; font-size: 1rem; margin-bottom: 14px; }
+        .testi-card p { color: var(--text); font-size: .97rem; line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+        .testi-author { font-weight: 700; color: var(--green-deep); font-size: .9rem; }
+        .testi-area { color: #8a9a8a; font-size: .82rem; }
+        .quote-mark { font-size: 3rem; line-height: 1; color: var(--green-light); opacity: .4; font-family: Georgia, serif; margin-bottom: -8px; }
 
-    /* ─── ESTIMATE CTA BANNER ────────────────────────── */
-    .cta-banner {
-        background: linear-gradient(100deg, var(--green-deep) 0%, #1e6035 60%, var(--green-mid) 100%);
-        padding: 80px 0;
-        color: #fff;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-    .cta-banner::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
-    .cta-banner h2 {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(1.9rem, 4.5vw, 3rem);
-        font-weight: 900;
-        margin-bottom: 14px;
-    }
-    .cta-banner p { font-size: 1.1rem; opacity: .85; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
+        /* ─── ESTIMATE CTA BANNER ────────────────────────── */
+        .cta-banner {
+            background: linear-gradient(100deg, var(--green-deep) 0%, #1e6035 60%, var(--green-mid) 100%);
+            padding: 80px 0;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .cta-banner h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.9rem, 4.5vw, 3rem);
+            font-weight: 900;
+            margin-bottom: 14px;
+        }
+        .cta-banner p { font-size: 1.1rem; opacity: .85; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
 
-    .btn-cta-gold {
-        background: var(--gold);
-        color: var(--dark);
-        font-size: 1.2rem;
-        padding: 17px 44px;
-        border-radius: 50px;
-        font-weight: 700;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        box-shadow: 0 6px 28px rgba(200,168,75,.4);
-        transition: transform .2s, box-shadow .2s;
-    }
-    .btn-cta-gold:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 36px rgba(200,168,75,.5);
-        color: var(--dark);
-    }
-    .btn-cta-outline-white {
-        background: transparent;
-        border: 2px solid rgba(255,255,255,.55);
-        color: #fff;
-        font-size: 1rem;
-        padding: 15px 32px;
-        border-radius: 50px;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        transition: background .2s, border-color .2s;
-    }
-    .btn-cta-outline-white:hover {
-        background: rgba(255,255,255,.12);
-        border-color: #fff;
-        color: #fff;
-    }
+        .btn-cta-gold {
+            background: var(--gold);
+            color: var(--dark);
+            font-size: 1.2rem;
+            padding: 17px 44px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 28px rgba(200,168,75,.4);
+            transition: transform .2s, box-shadow .2s;
+        }
+        .btn-cta-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 36px rgba(200,168,75,.5);
+            color: var(--dark);
+        }
+        .btn-cta-outline-white {
+            background: transparent;
+            border: 2px solid rgba(255,255,255,.55);
+            color: #fff;
+            font-size: 1rem;
+            padding: 15px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background .2s, border-color .2s;
+        }
+        .btn-cta-outline-white:hover {
+            background: rgba(255,255,255,.12);
+            border-color: #fff;
+            color: #fff;
+        }
 
-    /* ─── FOOTER ────────────────────────────────────── */
-    footer {
-        background: var(--dark);
-        color: rgba(255,255,255,.75);
-        padding: 64px 0 0;
-    }
-    .footer-brand {
-        font-family: 'Playfair Display', serif;
-        font-size: 1.4rem;
-        color: #fff;
-        font-weight: 900;
-        margin-bottom: 10px;
-    }
-    .footer-tagline { font-size: .9rem; opacity: .65; margin-bottom: 20px; line-height: 1.6; }
+        /* ─── FOOTER ────────────────────────────────────── */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,.75);
+            padding: 64px 0 0;
+        }
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+        .footer-tagline { font-size: .9rem; opacity: .65; margin-bottom: 20px; line-height: 1.6; }
 
-    .footer-heading {
-        font-weight: 700;
-        color: #fff;
-        font-size: .85rem;
-        letter-spacing: .12em;
-        text-transform: uppercase;
-        margin-bottom: 18px;
-    }
-    footer ul { list-style: none; padding: 0; }
-    footer ul li { margin-bottom: 10px; }
-    footer ul li a {
-        color: rgba(255,255,255,.6);
-        text-decoration: none;
-        font-size: .93rem;
-        transition: color .2s;
-    }
-    footer ul li a:hover { color: var(--gold); }
+        .footer-heading {
+            font-weight: 700;
+            color: #fff;
+            font-size: .85rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+        footer ul { list-style: none; padding: 0; }
+        footer ul li { margin-bottom: 10px; }
+        footer ul li a {
+            color: rgba(255,255,255,.6);
+            text-decoration: none;
+            font-size: .93rem;
+            transition: color .2s;
+        }
+        footer ul li a:hover { color: var(--gold); }
 
-    .footer-contact-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        margin-bottom: 14px;
-        font-size: .93rem;
-    }
-    .footer-contact-item i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: .93rem;
+        }
+        .footer-contact-item i { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
 
-    .footer-divider {
-        border-color: rgba(255,255,255,.1);
-        margin: 40px 0 0;
-    }
-    .footer-bottom {
-        padding: 18px 0;
-        font-size: .82rem;
-        opacity: .5;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-    .footer-bottom a {
-        color: var(--gold);
-        text-decoration: none;
-        opacity: 1;
-        font-weight: 600;
-    }
-    .footer-bottom a:hover { text-decoration: underline; }
+        .footer-divider {
+            border-color: rgba(255,255,255,.1);
+            margin: 40px 0 0;
+        }
+        .footer-bottom {
+            padding: 18px 0;
+            font-size: .82rem;
+            opacity: .5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .footer-bottom a {
+            color: var(--gold);
+            text-decoration: none;
+            opacity: 1;
+            font-weight: 600;
+        }
+        .footer-bottom a:hover { text-decoration: underline; }
 
-    /* ─── FLOATING CALL BTN ──────────────────────────── */
-    .floating-btn {
-        position: fixed;
-        bottom: 22px;
-        right: 22px;
-        z-index: 9999;
-        background: var(--green-mid);
-        color: #fff;
-        font-size: 1rem;
-        padding: 14px 24px;
-        border-radius: 50px;
-        font-weight: 700;
-        text-decoration: none;
-        box-shadow: 0 6px 24px rgba(45,122,79,.5);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        transition: background .2s, transform .15s;
-        animation: pulse-btn 2.8s ease infinite;
-    }
-    .floating-btn:hover {
-        background: var(--green-deep);
-        color: #fff;
-        transform: translateY(-2px);
-    }
-    @keyframes pulse-btn {
-        0%,100% { box-shadow: 0 6px 24px rgba(45,122,79,.5); }
-        50%      { box-shadow: 0 6px 36px rgba(45,122,79,.8); }
-    }
+        /* ─── FLOATING CALL BTN ──────────────────────────── */
+        .floating-btn {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            z-index: 9999;
+            background: var(--green-mid);
+            color: #fff;
+            font-size: 1rem;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 6px 24px rgba(45,122,79,.5);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background .2s, transform .15s;
+            animation: pulse-btn 2.8s ease infinite;
+        }
+        .floating-btn:hover {
+            background: var(--green-deep);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        @keyframes pulse-btn {
+            0%,100% { box-shadow: 0 6px 24px rgba(45,122,79,.5); }
+            50%      { box-shadow: 0 6px 36px rgba(45,122,79,.8); }
+        }
 
-    /* ─── RESPONSIVE OVERRIDES ────────────────────────── */
-    @media (max-width: 991px) {
-        .hero { height: 75vh; min-height: 460px; }
-        .services-cta-box { margin-top: 32px; }
-    }
-    @media (max-width: 576px) {
-        .hero { height: 70vh; min-height: 420px; }
-        .hero-ctas { flex-direction: column; align-items: center; }
-        .hero-ctas a { width: 100%; max-width: 320px; justify-content: center; }
-        .trust-bar span { display: block; margin: 5px 0; }
-        .footer-bottom { justify-content: center; text-align: center; }
-    }
-</style>
-```
+        /* ─── DISCOUNT POPUP ─────────────────────────────── */
+        .discount-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,30,15,.65);
+            backdrop-filter: blur(3px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            opacity: 0;
+            transition: opacity .35s ease;
+        }
+        .discount-overlay.is-visible {
+            display: flex;
+            opacity: 1;
+        }
+        .discount-modal {
+            position: relative;
+            background: #fff;
+            border-radius: 20px;
+            max-width: 460px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 24px 64px rgba(0,0,0,.35);
+            transform: translateY(18px) scale(.97);
+            transition: transform .35s ease;
+        }
+        .discount-overlay.is-visible .discount-modal {
+            transform: translateY(0) scale(1);
+        }
+        .discount-modal-header {
+            background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+            color: #fff;
+            padding: 32px 32px 28px;
+            text-align: center;
+            position: relative;
+        }
+        .discount-modal-header .discount-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark);
+            font-weight: 900;
+            font-size: .8rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            padding: 5px 16px;
+            border-radius: 50px;
+            margin-bottom: 12px;
+        }
+        .discount-modal-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 6px;
+        }
+        .discount-modal-header h3 span { color: var(--gold); }
+        .discount-modal-header p {
+            font-size: .92rem;
+            opacity: .85;
+            margin: 0;
+        }
+        .discount-modal-close {
+            position: absolute;
+            top: 12px; right: 14px;
+            background: rgba(255,255,255,.15);
+            border: none;
+            color: #fff;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: background .2s;
+        }
+        .discount-modal-close:hover { background: rgba(255,255,255,.3); }
+        .discount-modal-body { padding: 28px 32px 32px; }
+        .discount-modal-body label {
+            font-weight: 600;
+            font-size: .85rem;
+            color: var(--green-deep);
+            margin-bottom: 6px;
+            display: block;
+        }
+        .discount-modal-body input[type="email"],
+        .discount-modal-body input[type="text"] {
+            width: 100%;
+            border: 1.5px solid rgba(45,122,79,.2);
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: .95rem;
+            font-family: inherit;
+            color: var(--text);
+            margin-bottom: 14px;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        .discount-modal-body input:focus {
+            border-color: var(--green-mid);
+            box-shadow: 0 0 0 3px rgba(45,122,79,.12);
+            outline: none;
+        }
+        .discount-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .discount-consent input[type="checkbox"] {
+            margin-top: 3px;
+            width: 17px; height: 17px;
+            accent-color: var(--green-mid);
+            flex-shrink: 0;
+            cursor: pointer;
+        }
+        .discount-consent label {
+            font-size: .8rem;
+            color: #6b7a6b;
+            line-height: 1.5;
+            font-weight: 400;
+            margin: 0;
+            cursor: pointer;
+        }
+        .discount-consent a { color: var(--green-mid); text-decoration: underline; }
+        .btn-discount-submit {
+            width: 100%;
+            background: var(--gold);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            padding: 14px 24px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: .02em;
+            cursor: pointer;
+            transition: transform .15s, box-shadow .2s;
+            box-shadow: 0 6px 20px rgba(200,168,75,.4);
+        }
+        .btn-discount-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(200,168,75,.5); }
+        .discount-fineprint {
+            font-size: .76rem;
+            color: #9aa8a0;
+            text-align: center;
+            margin-top: 14px;
+            line-height: 1.5;
+        }
+        .discount-modal-success {
+            display: none;
+            text-align: center;
+            padding: 8px 0 4px;
+        }
+        .discount-modal-success.is-visible { display: block; }
+        .discount-modal-success i {
+            font-size: 2.6rem;
+            color: var(--green-mid);
+            margin-bottom: 14px;
+        }
+        .discount-modal-success h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--green-deep);
+            font-weight: 900;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        .discount-modal-success p { color: #6b7a6b; font-size: .92rem; line-height: 1.6; }
+        .discount-form.is-hidden { display: none; }
 
+
+        @media (max-width: 991px) {
+            .hero { height: 75vh; min-height: 460px; }
+            .services-cta-box { margin-top: 32px; }
+        }
+        @media (max-width: 576px) {
+            .hero { height: 70vh; min-height: 420px; }
+            .hero-ctas { flex-direction: column; align-items: center; }
+            .hero-ctas a { width: 100%; max-width: 320px; justify-content: center; }
+            .trust-bar span { display: block; margin: 5px 0; }
+            .footer-bottom { justify-content: center; text-align: center; }
+            .discount-modal-header { padding: 28px 22px 24px; }
+            .discount-modal-body { padding: 22px 22px 26px; }
+        }
+    </style>
 </head>
 <body>
 
 <!-- ═══════════════ NAVBAR ═══════════════ -->
-
 <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
             <img src="images/logo.png" alt="Soil Force Logo">
+            <span>Soil Force</span>
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -588,49 +754,46 @@
     </div>
 </nav>
 
-<!-- ═══════════════ HERO ═══════════════ -->
 
+<!-- ═══════════════ HERO ═══════════════ -->
 <section class="hero">
 
-```
-<!-- Responsive YouTube background -->
-<div class="hero-video-wrap">
-    <iframe
-        src="https://www.youtube.com/embed/O8g8MHvLkFQ?autoplay=1&mute=1&loop=1&playlist=O8g8MHvLkFQ&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1"
-        title="Drone Timelapse – Organic Lawn Care San Antonio"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-    </iframe>
-</div>
-
-<div class="hero-overlay"></div>
-
-<div class="hero-content">
-    <span class="hero-eyebrow"><i class="fas fa-leaf me-1"></i> San Antonio • North Spring Branch</span>
-    <h1>Your Lawn Deserves<br>Organic Care</h1>
-    <p class="hero-sub">Professional • Affordable • 100% Organic<br>Compost · Leveling · Aeration · Fertilization</p>
-    <div class="hero-ctas">
-        <a href="tel:+17262343062" class="btn-hero-primary">
-            <i class="fas fa-phone-alt"></i> Call (726) 234-3062
-        </a>
-        <a href="contact.html" class="btn-hero-secondary">
-            <i class="fas fa-calendar-check me-1"></i> Book a Free Estimate
-        </a>
+    <!-- Responsive YouTube background -->
+    <div class="hero-video-wrap">
+        <iframe
+            src="https://www.youtube.com/embed/O8g8MHvLkFQ?autoplay=1&mute=1&loop=1&playlist=O8g8MHvLkFQ&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1&disablekb=1&iv_load_policy=3&fs=0"
+            title="Drone Timelapse – Organic Lawn Care San Antonio"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
     </div>
-</div>
 
-<!-- Scroll cue -->
-<div class="scroll-cue">
-    <i class="fas fa-chevron-down fa-lg text-white"></i>
-</div>
-```
+    <div class="hero-overlay"></div>
 
+    <div class="hero-content">
+        <span class="hero-eyebrow"><i class="fas fa-leaf me-1"></i> San Antonio • North Spring Branch</span>
+        <h1>Your Lawn Deserves<br>Organic Care</h1>
+        <p class="hero-sub">Professional • Affordable • 100% Organic<br>Compost · Leveling · Aeration · Fertilization</p>
+        <div class="hero-ctas">
+            <a href="tel:+17262343062" class="btn-hero-primary">
+                <i class="fas fa-phone-alt"></i> Call (726) 234-3062
+            </a>
+            <a href="contact.html" class="btn-hero-secondary">
+                <i class="fas fa-calendar-check me-1"></i> Book a Free Estimate
+            </a>
+        </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue">
+        <i class="fas fa-chevron-down fa-lg text-white"></i>
+    </div>
 </section>
 
-<!-- ═══════════════ TRUST BAR ═══════════════ -->
 
+<!-- ═══════════════ TRUST BAR ═══════════════ -->
 <div class="trust-bar">
     <span><i class="fas fa-star"></i> 5-Star Rated</span>
     <span><i class="fas fa-shield-alt"></i> Licensed & Insured</span>
@@ -639,8 +802,8 @@
     <span><i class="fas fa-clock"></i> Same-Week Service</span>
 </div>
 
-<!-- ═══════════════ BENEFITS ═══════════════ -->
 
+<!-- ═══════════════ BENEFITS ═══════════════ -->
 <section class="benefits">
     <div class="container">
         <div class="text-center mb-5">
@@ -681,80 +844,77 @@
     </div>
 </section>
 
-<!-- ═══════════════ SERVICES + CTA ═══════════════ -->
 
+<!-- ═══════════════ SERVICES + CTA ═══════════════ -->
 <section class="services">
     <div class="container">
         <div class="row g-5 align-items-start">
 
-```
-        <!-- Services list -->
-        <div class="col-lg-7">
-            <p class="section-label">What We Do</p>
-            <h2 class="section-title">Our Core Services</h2>
-            <div class="section-divider"></div>
-            <p class="mb-4" style="color:#6b7a6b; line-height:1.7;">
-                From a bare patch of dirt to a thick, healthy lawn — we handle every step of the transformation using organic, eco-friendly methods.
-            </p>
+            <!-- Services list -->
+            <div class="col-lg-7">
+                <p class="section-label">What We Do</p>
+                <h2 class="section-title">Our Core Services</h2>
+                <div class="section-divider"></div>
+                <p class="mb-4" style="color:#6b7a6b; line-height:1.7;">
+                    From a bare patch of dirt to a thick, healthy lawn — we handle every step of the transformation using organic, eco-friendly methods.
+                </p>
 
-            <div class="service-item">
-                <div class="service-num">1</div>
-                <div>
-                    <h6>Organic Compost Application</h6>
-                    <p>Nutrient-rich organic compost enriches your soil, boosting microbial activity and long-term grass health.</p>
+                <div class="service-item">
+                    <div class="service-num">1</div>
+                    <div>
+                        <h6>Organic Compost Application</h6>
+                        <p>Nutrient-rich organic compost enriches your soil, boosting microbial activity and long-term grass health.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="service-item">
-                <div class="service-num">2</div>
-                <div>
-                    <h6>Lawn Leveling</h6>
-                    <p>Fix uneven, bumpy yards that collect water and look rough — we topdress and level for a smooth, uniform surface.</p>
+                <div class="service-item">
+                    <div class="service-num">2</div>
+                    <div>
+                        <h6>Lawn Leveling</h6>
+                        <p>Fix uneven, bumpy yards that collect water and look rough — we topdress and level for a smooth, uniform surface.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="service-item">
-                <div class="service-num">3</div>
-                <div>
-                    <h6>Core Aeration</h6>
-                    <p>Break up compacted soil so air, water, and nutrients can reach the root zone — essential for thick, green grass.</p>
+                <div class="service-item">
+                    <div class="service-num">3</div>
+                    <div>
+                        <h6>Core Aeration</h6>
+                        <p>Break up compacted soil so air, water, and nutrients can reach the root zone — essential for thick, green grass.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="service-item">
-                <div class="service-num">4</div>
-                <div>
-                    <h6>Organic Fertilization</h6>
-                    <p>Slow-release, pet-safe fertilizers that feed your lawn gradually all season without burning or chemical runoff.</p>
+                <div class="service-item">
+                    <div class="service-num">4</div>
+                    <div>
+                        <h6>Organic Fertilization</h6>
+                        <p>Slow-release, pet-safe fertilizers that feed your lawn gradually all season without burning or chemical runoff.</p>
+                    </div>
                 </div>
-            </div>
 
-            <a href="services.html" class="btn btn-outline-success mt-3 px-4 py-2 fw-600 rounded-pill">
-                See All Services <i class="fas fa-arrow-right ms-2"></i>
-            </a>
-        </div>
-
-        <!-- CTA Box -->
-        <div class="col-lg-5">
-            <div class="services-cta-box">
-                <i class="fas fa-calendar-check fa-3x mb-3" style="color:var(--gold); opacity:.9;"></i>
-                <h3>Get Your Free Estimate Today</h3>
-                <p>No commitment, no pressure. We'll visit your property and give you a clear, upfront quote — totally free.</p>
-                <a href="tel:+17262343062" class="btn-cta-gold mb-3 w-100 justify-content-center">
-                    <i class="fas fa-phone-alt"></i> Call (726) 234-3062
+                <a href="services.html" class="btn btn-outline-success mt-3 px-4 py-2 fw-600 rounded-pill">
+                    See All Services <i class="fas fa-arrow-right ms-2"></i>
                 </a>
-                <a href="contact.html" class="btn-cta-outline-white w-100 justify-content-center">
-                    <i class="fas fa-envelope"></i> Send a Message
-                </a>
-                <p class="mt-4" style="font-size:.82rem; opacity:.6;">Mon–Sat · 7:00 AM – 6:00 PM · San Antonio, TX</p>
             </div>
-        </div>
 
+            <!-- CTA Box -->
+            <div class="col-lg-5">
+                <div class="services-cta-box">
+                    <i class="fas fa-calendar-check fa-3x mb-3" style="color:var(--gold); opacity:.9;"></i>
+                    <h3>Get Your Free Estimate Today</h3>
+                    <p>No commitment, no pressure. We'll visit your property and give you a clear, upfront quote — totally free.</p>
+                    <a href="tel:+17262343062" class="btn-cta-gold mb-3 w-100 justify-content-center">
+                        <i class="fas fa-phone-alt"></i> Call (726) 234-3062
+                    </a>
+                    <a href="contact.html" class="btn-cta-outline-white w-100 justify-content-center">
+                        <i class="fas fa-envelope"></i> Send a Message
+                    </a>
+                    <p class="mt-4" style="font-size:.82rem; opacity:.6;">Mon–Sat · 7:00 AM – 6:00 PM · San Antonio, TX</p>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div>
-```
-
 </section>
 
-<!-- ═══════════════ STATS ═══════════════ -->
 
+<!-- ═══════════════ STATS ═══════════════ -->
 <section class="social-proof">
     <div class="container">
         <div class="row g-4 text-center">
@@ -786,8 +946,8 @@
     </div>
 </section>
 
-<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
 
+<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
 <section class="testimonials">
     <div class="container">
         <div class="text-center mb-5">
@@ -832,8 +992,8 @@
     </div>
 </section>
 
-<!-- ═══════════════ CTA BANNER ═══════════════ -->
 
+<!-- ═══════════════ CTA BANNER ═══════════════ -->
 <section class="cta-banner">
     <div class="container position-relative">
         <i class="fas fa-phone-alt fa-2x mb-3" style="color:var(--gold);"></i>
@@ -853,94 +1013,144 @@
     </div>
 </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
 
+<!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
     <div class="container">
         <div class="row g-5">
 
-```
-        <!-- Brand col -->
-        <div class="col-lg-4">
-            <div class="footer-brand">🌿 Soil Force</div>
-            <p class="footer-tagline">
-                San Antonio's trusted source for professional, affordable, and 100% organic lawn care. Proudly serving families and homeowners across the greater SA area.
-            </p>
-            <a href="tel:+17262343062" style="color:var(--gold); font-size:1.1rem; font-weight:700; text-decoration:none;">
-                <i class="fas fa-phone-alt me-2"></i>(726) 234-3062
-            </a>
-        </div>
+            <!-- Brand col -->
+            <div class="col-lg-4">
+                <div class="footer-brand">🌿 Soil Force</div>
+                <p class="footer-tagline">
+                    San Antonio's trusted source for professional, affordable, and 100% organic lawn care. Proudly serving families and homeowners across the greater SA area.
+                </p>
+                <a href="tel:+17262343062" style="color:var(--gold); font-size:1.1rem; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-phone-alt me-2"></i>(726) 234-3062
+                </a>
+            </div>
 
-        <!-- Nav links -->
-        <div class="col-6 col-lg-2">
-            <p class="footer-heading">Navigate</p>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="testimonials.html">Reviews</a></li>
-                <li><a href="videos.html">Video Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
+            <!-- Nav links -->
+            <div class="col-6 col-lg-2">
+                <p class="footer-heading">Navigate</p>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="testimonials.html">Reviews</a></li>
+                    <li><a href="videos.html">Video Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
 
-        <!-- Services -->
-        <div class="col-6 col-lg-2">
-            <p class="footer-heading">Services</p>
-            <ul>
-                <li><a href="services.html">Compost Application</a></li>
-                <li><a href="services.html">Lawn Leveling</a></li>
-                <li><a href="services.html">Core Aeration</a></li>
-                <li><a href="services.html">Fertilization</a></li>
-                <li><a href="services.html">Lawn Restoration</a></li>
-            </ul>
-        </div>
+            <!-- Services -->
+            <div class="col-6 col-lg-2">
+                <p class="footer-heading">Services</p>
+                <ul>
+                    <li><a href="services.html">Compost Application</a></li>
+                    <li><a href="services.html">Lawn Leveling</a></li>
+                    <li><a href="services.html">Core Aeration</a></li>
+                    <li><a href="services.html">Fertilization</a></li>
+                    <li><a href="services.html">Lawn Restoration</a></li>
+                </ul>
+            </div>
 
-        <!-- Contact -->
-        <div class="col-lg-4">
-            <p class="footer-heading">Get in Touch</p>
-            <div class="footer-contact-item">
-                <i class="fas fa-phone-alt"></i>
-                <div>
-                    <a href="tel:+17262343062" style="color:rgba(255,255,255,.7); text-decoration:none;">(726) 234-3062</a><br>
-                    <small style="opacity:.5;">Mon–Sat, 7:00 AM – 6:00 PM</small>
+            <!-- Contact -->
+            <div class="col-lg-4">
+                <p class="footer-heading">Get in Touch</p>
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <a href="tel:+17262343062" style="color:rgba(255,255,255,.7); text-decoration:none;">(726) 234-3062</a><br>
+                        <small style="opacity:.5;">Mon–Sat, 7:00 AM – 6:00 PM</small>
+                    </div>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>San Antonio, TX<br><small style="opacity:.5;">North Spring Branch & surrounding areas</small></div>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <div>
+                        <a href="contact.html" style="color:var(--gold); text-decoration:none; font-weight:600;">Request a Free Estimate →</a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <div>San Antonio, TX<br><small style="opacity:.5;">North Spring Branch & surrounding areas</small></div>
-            </div>
-            <div class="footer-contact-item">
-                <i class="fas fa-calendar-check"></i>
-                <div>
-                    <a href="contact.html" style="color:var(--gold); text-decoration:none; font-weight:600;">Request a Free Estimate →</a>
-                </div>
-            </div>
+
         </div>
 
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <div>© 2025 Soil Force · All rights reserved</div>
+            <div>Made with <span style="color:#e25555;">♥</span> by <a href="https://x.com/guilebaldo" target="_blank" rel="noopener">guilebaldo</a></div>
+        </div>
     </div>
-
-    <hr class="footer-divider">
-
-    <div class="footer-bottom">
-        <div>© 2025 Soil Force · All rights reserved</div>
-        <div>Made with <span style="color:#e25555;">♥</span> by <a href="https://x.com/guilebaldo" target="_blank" rel="noopener">guilebaldo</a></div>
-    </div>
-</div>
-```
-
 </footer>
 
-<!-- Floating Call Button (Mobile) -->
 
+<!-- ═══════════════ DISCOUNT POPUP ═══════════════ -->
+<div class="discount-overlay" id="discountOverlay">
+    <div class="discount-modal">
+        <button type="button" class="discount-modal-close" id="discountClose" aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="discount-modal-header">
+            <span class="discount-badge"><i class="fas fa-leaf me-1"></i> Limited Offer</span>
+            <h3>Get <span>$50 OFF</span><br>Your First Service</h3>
+            <p>Join our list for lawn care tips & exclusive offers in San Antonio</p>
+        </div>
+        <div class="discount-modal-body">
+
+            <form class="discount-form" id="discountForm" action="https://assets.mailerlite.com/jsonp/2427316/forms/190024545233536466/subscribe" method="post" target="mlSubmitFrame" novalidate>
+                <label for="discountName">First Name</label>
+                <input type="text" id="discountName" name="fields[name]" placeholder="Your name" autocomplete="given-name">
+
+                <label for="discountEmail">Email Address *</label>
+                <input type="email" id="discountEmail" name="fields[email]" placeholder="you@email.com" required autocomplete="email">
+
+                <div class="discount-consent">
+                    <input type="checkbox" id="discountConsent" required>
+                    <label for="discountConsent">
+                        I agree to receive emails from Soil Force, including my $50 discount code and occasional lawn care tips & offers. I can unsubscribe at any time. See our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <input type="hidden" name="ml-submit" value="1">
+
+                <button type="submit" class="btn-discount-submit">
+                    <i class="fas fa-gift me-2"></i> Send Me My $50 Code
+                </button>
+
+                <p class="discount-fineprint">
+                    We respect your privacy — your email is never sold or shared. Unsubscribe anytime with one click.
+                </p>
+            </form>
+
+            <div class="discount-modal-success" id="discountSuccess">
+                <i class="fas fa-circle-check"></i>
+                <h4>You're In! 🎉</h4>
+                <p>Check your inbox for your <strong>$50 discount code</strong> — it's on its way. Welcome to the Soil Force family!</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Hidden iframe target so MailerLite submission doesn't navigate the page -->
+<iframe name="mlSubmitFrame" id="mlSubmitFrame" style="display:none;" title="form submission target"></iframe>
+
+
+<!-- Floating Call Button (Mobile) -->
 <a href="tel:+17262343062" class="floating-btn d-lg-none">
     <i class="fas fa-phone-alt"></i> Call Now
 </a>
 
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- Responsive YT iframe sizing for older browsers -->
-
 <script>
     function fitHeroVideo() {
         const wrap = document.querySelector('.hero-video-wrap');
@@ -956,6 +1166,74 @@
     }
     window.addEventListener('load', fitHeroVideo);
     window.addEventListener('resize', fitHeroVideo);
+</script>
+
+<!-- $50 Discount Popup Logic -->
+<script>
+    (function () {
+        const STORAGE_KEY = 'soilforce_discount_popup';
+        const overlay  = document.getElementById('discountOverlay');
+        const closeBtn = document.getElementById('discountClose');
+        const form     = document.getElementById('discountForm');
+        const success  = document.getElementById('discountSuccess');
+        const iframeEl = document.getElementById('mlSubmitFrame');
+
+        // Don't show again if the user already subscribed or dismissed it
+        function alreadyHandled() {
+            try {
+                return localStorage.getItem(STORAGE_KEY) === 'done';
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function markHandled() {
+            try { localStorage.setItem(STORAGE_KEY, 'done'); } catch (e) {}
+        }
+
+        function openPopup() {
+            if (alreadyHandled()) return;
+            overlay.classList.add('is-visible');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            overlay.classList.remove('is-visible');
+            document.body.style.overflow = '';
+        }
+
+        // Show after a short delay so it doesn't feel intrusive on arrival
+        setTimeout(openPopup, 9000);
+
+        // Close interactions
+        closeBtn.addEventListener('click', function () {
+            markHandled();
+            closePopup();
+        });
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) {
+                markHandled();
+                closePopup();
+            }
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && overlay.classList.contains('is-visible')) {
+                markHandled();
+                closePopup();
+            }
+        });
+
+        // On submit: let the form post to MailerLite via the hidden iframe,
+        // then show a friendly confirmation without leaving the page.
+        form.addEventListener('submit', function () {
+            markHandled();
+            setTimeout(function () {
+                form.classList.add('is-hidden');
+                success.classList.add('is-visible');
+                setTimeout(closePopup, 4000);
+            }, 600);
+        });
+    })();
 </script>
 
 </body>
